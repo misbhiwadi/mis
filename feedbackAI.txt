@@ -20,7 +20,7 @@ CAROUSEL NAVIGATION ISSUE & FIX DOCUMENTATION
 ==============================================
 
 DATE: 2025-11-02
-FILE: aluminium_fabrication.html
+FILE: aluminium-fabrication-bhiwadi.html
 CAROUSELS AFFECTED: carousel-facade, carousel-glass-film-new
 
 ## ISSUE DESCRIPTION:
