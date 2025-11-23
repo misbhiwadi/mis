@@ -567,6 +567,49 @@
                 object-fit: cover !important;
             }
             
+            /* Make statistics section horizontal in one row for mobile */
+            .fact-counter-section {
+                padding: 15px 0 !important;
+            }
+            
+            .fact-counter-section .row {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+            }
+            
+            .fact-counter-section .col-md-3 {
+                flex: 1 !important;
+                min-width: 0 !important;
+                padding: 0 5px !important;
+            }
+            
+            .single-fact-counter {
+                text-align: center !important;
+                padding: 8px 5px !important;
+            }
+            
+            .single-fact-counter .text-box {
+                padding: 0 !important;
+            }
+            
+            .single-fact-counter .icon-box {
+                margin-bottom: 5px !important;
+            }
+            
+            .single-fact-counter .icon-box i {
+                font-size: 20px !important;
+            }
+            
+            .single-fact-counter .number {
+                font-size: 16px !important;
+                margin: 3px 0 !important;
+            }
+            
+            .single-fact-counter p {
+                font-size: 10px !important;
+                margin: 3px 0 0 0 !important;
+            }
+            
             /* Force spacing with universal selector */
             .welcome_sec * {
                 margin-top: 0 !important;
