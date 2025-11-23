@@ -1280,21 +1280,28 @@
                 align-items: center !important;
                 flex-wrap: nowrap !important;
                 margin: 0 !important;
-                padding: 0 5px !important;
-                gap: 3px !important;
-                margin-left: 45px !important;
+                padding: 0 2px !important;
+                gap: 2px !important;
+                margin-left: 55px !important;
+                overflow-x: auto !important;
+                scrollbar-width: none !important;
+            }
+            
+            .header-info ul::-webkit-scrollbar {
+                display: none !important;
             }
             
             .header-info li {
                 display: flex !important;
                 align-items: center !important;
                 background: rgba(227, 29, 35, 0.05) !important;
-                padding: 4px 6px !important;
-                border-radius: 15px !important;
+                padding: 3px 4px !important;
+                border-radius: 10px !important;
                 margin: 0 !important;
-                font-size: 8px !important;
+                font-size: 7px !important;
                 border: 1px solid rgba(227, 29, 35, 0.1) !important;
                 flex-shrink: 0 !important;
+                white-space: nowrap !important;
             }
             
             .header-info li:first-child {
