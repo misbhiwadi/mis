@@ -610,6 +610,43 @@
                 margin: 3px 0 0 0 !important;
             }
             
+            /* Optimize footer for mobile */
+            .footer {
+                padding: 20px 0 !important;
+            }
+            
+            .footer .col-md-3 {
+                margin-bottom: 15px !important;
+                padding: 0 10px !important;
+            }
+            
+            .footer-first,
+            .footer-second,
+            .footer-four {
+                text-align: center !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .footer h2 {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .footer ul li {
+                font-size: 12px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .footer ul li a {
+                font-size: 12px !important;
+            }
+            
+            .footer iframe {
+                height: 150px !important;
+                width: 100% !important;
+            }
+            
             /* Force spacing with universal selector */
             .welcome_sec * {
                 margin-top: 0 !important;
@@ -2477,18 +2514,20 @@
 					<div class="col-sm-6 col-md-3">
 						<div class="footer-second">
 							<h2>Our Products</h2>
-                            <ul>
-                                <li class="dropdown"><a href="aluminium-fabrication-bhiwadi.html">Aluminium Fabrication & Glass</a><ul><li><a href="aluminium-fabrication-bhiwadi.html?product=aluminium-partition">Aluminium Partition</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=doors-windows">Doors & Windows</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=false-ceiling">False Ceiling</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=glass-film">Glass Film</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=kitchen-cabinet">Kitchen Cabinet</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=facade-exterior">Facade Exterior</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=curtains-window-door">Curtains Window & Door</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=mosquito-mesh">Mosquito Mesh</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=balcony-cover">Balcony Cover</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=structural-glassing">Structural Glassing</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=glass-partition">Glass Partition</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=sliding-folding">Sliding Folding</a></li><li><a href="aluminium-fabrication-bhiwadi.html?product=composite-panel-system">Composite Panel System</a></li></ul></li>
-                                <li class="dropdown"><a href="ms-fabrication-bhiwadi.html">MS Fabrication</a><ul><li><a href="ms-fabrication-bhiwadi.html?product=door-window">Door &amp; Window</a></li><li><a href="ms-fabrication-bhiwadi.html?product=fencing">Fencing</a></li><li><a href="ms-fabrication-bhiwadi.html?product=tin-shade">Tin Shade</a></li><li><a href="ms-fabrication-bhiwadi.html?product=trolley">Trolley</a></li></ul></li>
-                                <li class="dropdown"><a href="calibration-bhiwadi.html">Calibration & Testing Services</a><ul><li><a href="calibration-bhiwadi.html">NABL Calibration</a></li><li><a href="calibration-bhiwadi.html">Electrical</a></li><li><a href="mechanical-calibration-bhiwadi.html">Mechanical</a></li><li><a href="pharmaceutical-calibration-bhiwadi.html">Pharmaceutical</a></li><li><a href="calibration-instrument-bhiwadi.html">Instrument Supply</a></li><li><a href="special-instruments-bhiwadi.html">Special Instruments Calibration</a></li></ul></li>
-                                            <li><a href="ss-fabrication-bhiwadi.html">SS Fabrication</a></li>
-                                                <li><a href="hardware-store-supplier-bhiwadi.html">Hardware Supply(On Demad)</a></li>
-                                                <li><a href="wall-paint-service-bhiwadi.html">Wall Painting Service</a></li>
-                                                <li><a href="heavvy-electrical-bhiwadi.html">Heavy Electrical Installation & Repair</a></li>
-                                                <li><a href="transport-bhiwadi.html">Transport Service</a></li>
-                                                <li><a href="pg-room-bhiwadi.html">PG & Rooms Service</a></li>
-                                                
-                                            </ul>						</div>	
+                            <ul class="footer-products-list">
+                                <li><a href="aluminium-fabrication-bhiwadi.html">Aluminium Fabrication & Glass</a></li>
+                                <li><a href="ms-fabrication-bhiwadi.html">MS Fabrication</a></li>
+                                <li><a href="calibration-bhiwadi.html">Calibration & Testing Services</a></li>
+                                <li><a href="ss-fabrication-bhiwadi.html">SS Fabrication</a></li>
+                                <li><a href="fire-safety-equipment.html">Fire Safety Equipment</a></li>
+                                <li class="footer-hidden-items" style="display: none;"><a href="hardware-store-supplier-bhiwadi.html">Hardware Supply (On Demand)</a></li>
+                                <li class="footer-hidden-items" style="display: none;"><a href="wall-paint-service-bhiwadi.html">Wall Painting Service</a></li>
+                                <li class="footer-hidden-items" style="display: none;"><a href="heavvy-electrical-bhiwadi.html">Heavy Electrical Installation & Repair</a></li>
+                                <li class="footer-hidden-items" style="display: none;"><a href="transport-bhiwadi.html">Transport Service</a></li>
+                                <li class="footer-hidden-items" style="display: none;"><a href="pg-room-bhiwadi.html">PG & Rooms Service</a></li>
+                            </ul>
+                            <a href="#" class="footer-read-more" onclick="toggleFooterProducts(event)" style="color: #e31d23; font-size: 12px; text-decoration: underline;">Read More</a>
+						</div>	
 					</div>
 					<div class="col-sm-6 col-md-3">
 						<div class="footer-second">
@@ -2621,6 +2660,27 @@
             lastScrollTop = currentScrollTop;
         });
     });
+    
+    // Footer products toggle function
+    function toggleFooterProducts(event) {
+        event.preventDefault();
+        var hiddenItems = document.querySelectorAll('.footer-hidden-items');
+        var readMoreBtn = document.querySelector('.footer-read-more');
+        
+        if (hiddenItems[0].style.display === 'none') {
+            // Show hidden items
+            hiddenItems.forEach(function(item) {
+                item.style.display = 'list-item';
+            });
+            readMoreBtn.textContent = 'Show Less';
+        } else {
+            // Hide items
+            hiddenItems.forEach(function(item) {
+                item.style.display = 'none';
+            });
+            readMoreBtn.textContent = 'Read More';
+        }
+    }
     </script>
 </body>
 
