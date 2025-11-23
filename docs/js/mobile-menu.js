@@ -9,7 +9,7 @@
     function initMobileMenu() {
         if (!isMobile()) return;
         
-        // Add dropdown arrows for mobile
+        // Add dropdown arrows for mobile - both main and sticky headers
         $('.main-menu .navigation > li.dropdown').each(function() {
             if (!$(this).find('.mobile-arrow').length) {
                 $(this).find('> a').append('<span class="mobile-arrow fa fa-angle-down"></span>');
@@ -26,7 +26,7 @@
         $('.main-menu .navigation > li.dropdown').off('mouseenter mouseleave');
         $('.main-menu .navigation > li > ul > li.dropdown').off('mouseenter mouseleave');
         
-        // Main dropdown click handler
+        // Main dropdown click handler - works for both headers
         $('.main-menu .navigation > li.dropdown > a').off('click.mobile').on('click.mobile', function(e) {
             if (isMobile()) {
                 e.preventDefault();

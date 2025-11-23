@@ -443,6 +443,47 @@
             top: 0 !important;
         }
         
+        /* Mobile-specific sticky header height */
+        @media (max-width: 767px) {
+            .sticky-header {
+                height: 35px !important;
+                overflow: visible !important;
+            }
+            
+            /* Sticky menu hidden by default - maximum specificity */
+            .sticky-header .main-menu .navbar-collapse.collapse,
+            .sticky-header .main-menu .navbar-collapse,
+            .sticky-header .navbar-collapse {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 15px !important;
+                right: 15px !important;
+                width: calc(100% - 30px) !important;
+                background: #e1e1e1 !important;
+                padding: 10px !important;
+                border-radius: 8px !important;
+                z-index: 1001 !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            /* Show when Bootstrap adds .in class - maximum specificity */
+            .sticky-header .main-menu .navbar-collapse.collapse.in,
+            .sticky-header .main-menu .navbar-collapse.in,
+            .sticky-header .navbar-collapse.in {
+                display: block !important;
+            }
+            
+            /* Override any other rules that might interfere */
+            .sticky-header .main-menu .navbar-collapse.collapse:not(.in) {
+                display: none !important;
+            }
+        }
+        
         /* Remove spaces between client logos */
         .partener-slider .image-box {
             margin: 0 !important;
@@ -813,6 +854,171 @@
             /* Smooth animations */
             .main-menu .navigation ul {
                 transition: all 0.2s ease !important;
+            }
+            
+            /* Fix sticky header mobile menu positioning */
+            .sticky-header .right-col {
+                float: none !important;
+                width: 100% !important;
+            }
+            
+            .sticky-header .main-menu {
+                float: none !important;
+                width: 100% !important;
+                position: relative !important;
+            }
+            
+            /* Fix sticky header container and alignment - prevent conflicts */
+            .sticky-header.show .auto-container {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                padding: 0 !important;
+                min-height: 26px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+            
+            .sticky-header.show .logo.pull-left {
+                float: none !important;
+                margin: 0 !important;
+                position: static !important;
+                margin-left: 5px !important;
+            }
+            
+            .sticky-header.show .logo img {
+                max-height: 22px !important;
+            }
+            
+            .sticky-header.show .right-col.pull-right {
+                float: none !important;
+                width: auto !important;
+                margin: 0 !important;
+                position: static !important;
+                margin-right: 5px !important;
+            }
+            
+            .sticky-header.show .navbar-toggle {
+                margin: 0 !important;
+                position: static !important;
+                padding: 3px 5px !important;
+                min-height: 19px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            
+            .sticky-header.show .navbar-toggle .icon-bar {
+                margin: 1px 0 !important;
+            }
+            
+            .sticky-header.show .main-menu {
+                float: none !important;
+                width: auto !important;
+                position: static !important;
+            }
+            
+            .sticky-header.show .navbar-header {
+                float: none !important;
+                margin: 0 !important;
+                position: static !important;
+            }
+            
+            .sticky-header .main-menu .navbar-collapse.collapse,
+            .sticky-header .main-menu .navbar-collapse,
+            .sticky-header .navbar-collapse {
+                background: #e1e1e1 !important;
+                border-radius: 8px !important;
+                margin-top: 10px !important;
+                padding: 10px !important;
+                position: absolute !important;
+                width: calc(100% - 30px) !important;
+                left: 15px !important;
+                right: 15px !important;
+                top: 100% !important;
+                float: none !important;
+                clear: both !important;
+                z-index: 1000 !important;
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            .sticky-header .navbar-toggle {
+                margin-right: 0 !important;
+                position: relative !important;
+            }
+            
+            /* Fix sticky header container positioning for dropdown */
+            .sticky-header.show .auto-container {
+                position: relative !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > a {
+                color: #333 !important;
+                padding: 12px 20px !important;
+                border-bottom: 1px solid #ccc !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li:hover > a,
+            .sticky-header .main-menu .navigation > li.active > a {
+                background: #e31d23 !important;
+                color: #fff !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul {
+                background: #e1e1e1 !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul > li > a {
+                color: #333 !important;
+                padding: 10px 30px !important;
+                border-bottom: 1px solid #ccc !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul > li:hover > a {
+                background: #e31d23 !important;
+                color: #fff !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul > li > ul {
+                background: #1e3f73 !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul > li > ul > li > a {
+                color: #fff !important;
+                padding: 8px 40px !important;
+                border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+            }
+            
+            .sticky-header .main-menu .navigation > li > ul > li > ul > li:hover > a {
+                background: rgba(255,255,255,0.2) !important;
+                color: #fff !important;
+            }
+            
+            /* Override for closed dropdowns in sticky header */
+            .sticky-header .main-menu .navigation > li.dropdown:not(.active) > ul,
+            .sticky-header .main-menu .navigation > li > ul > li.dropdown:not(.active) > ul {
+                display: none !important;
+                height: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                overflow: hidden !important;
+            }
+            
+            /* Apply same centering to main header hamburger button */
+            .header-lower .navbar-toggle {
+                text-align: center !important;
+                vertical-align: middle !important;
+            }
+            
+            .header-lower .navbar-toggle .icon-bar {
+                margin: 2px auto !important;
+                display: block !important;
             }
             
             /* Header section - clean and organized */
@@ -1281,7 +1487,7 @@
                         <nav class="main-menu">
                             <div class="navbar-header">
                                 <!-- Toggle Button -->
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sticky-header .navbar-collapse">
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
