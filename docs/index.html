@@ -455,6 +455,11 @@
             }
         }
         
+        /* Reduce space between page title and welcome section for desktop */
+        .welcome_sec {
+            margin-top: -5px !important;
+        }
+        
         /* Mobile-specific sticky header height */
         @media (max-width: 767px) {
             .sticky-header {
@@ -480,6 +485,55 @@
                 margin: 4px 0 !important;
                 font-size: 15px !important;
                 line-height: 1.0 !important;
+            }
+            
+            /* Make welcome section smaller for mobile */
+            .welcome_sec {
+                padding-top: 5px !important;
+                padding-bottom: 10px !important;
+                margin-top: -5px !important;
+            }
+            
+            .welcome_sec .title_holder h2 {
+                font-size: 20px !important;
+                margin-bottom: 0 !important;
+                line-height: 1.2 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .welcome_sec .title_holder {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .welcome_sec .text {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            .welcome_sec .text h3 {
+                font-size: 14px !important;
+                line-height: 1.3 !important;
+                margin-bottom: 8px !important;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            /* Force spacing with universal selector */
+            .welcome_sec * {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            .welcome_sec .title_holder * {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .welcome_sec .text p {
+                font-size: 12px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 10px !important;
             }
             
             /* Make sticky header auto-container scrollable */
@@ -1582,7 +1636,7 @@
           <!--Page Title-->
           <section class="page-title" style="background-image:url(images/background/page-title-4.jpg);">
             <div class="auto-container">
-                <h1>MicroTech Industrial Solutions</h1>
+                <h1>Welcome to MicroTech Industrial Solutions</h1>
                 
             </div>
         </section>
@@ -1598,19 +1652,11 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 welcome_title">
 
-                        <div class="title_holder">
-
-                            <h2>Welcome to <span>MicroTech</span> Industrial Solutions</h2>
-
-                        </div>
-
                         <!-- /title_holder -->
 
                         <div class="text">
 
-                            <h3 style="text-align: justify;">At MicroTech Industrial Solutions, we are committed to delivering high-quality fabrication and industrial services under one trusted roof. Backed by rich industry expertise and a passion for innovation, we offer end-to-end solutions across Aluminium Fabrication, Mild Steel (MS) Fabrication, Instrument Calibration, Fire Doors, Industrial Hardware Supply, and more.</h3>
-
-                            <p style="text-align: justify;">Our mission is simple — to provide reliable, durable, and value-driven solutions for Residential, Commercial, and Industrial requirements, ensuring precision, safety, and long-term performance.</p>
+                            <h3 style="text-align: justify;">At MicroTech Industrial Solutions, we are committed to delivering high-quality fabrication and industrial services under one trusted roof. Backed by rich industry expertise and a passion for innovation, we offer end-to-end solutions across Aluminium Fabrication, Mild Steel (MS) Fabrication, Instrument Calibation, Fire Doors, Industrial Hardware Supply, and more.</h3>
 
                             <a class="view_services" href="about.html">Read More <i class="fa fa-caret-right"></i></a>
 
