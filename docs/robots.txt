@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ncrindustrialsolution.in/sitemap.xml
+
+# Disallow test and temporary files
+Disallow: /mobile-test.html
+Disallow: /heavyelectrical.html
+Disallow: /cdn-cgi/
+Disallow: /fonts/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow important directories
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Crawl-delay
+Crawl-delay: 1

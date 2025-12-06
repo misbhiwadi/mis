@@ -1,0 +1,35 @@
+/* SEO Performance Optimization */
+
+/* Core Web Vitals - Page Speed */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy;
+}
+
+/* Reduce layout shift */
+.container {
+    min-height: 1px;
+}
+
+/* Font loading optimization */
+@font-face {
+    font-display: swap;
+}
+
+/* Critical above-the-fold content */
+.page-title, .welcome_sec, .about-section {
+    contain: layout style paint;
+}
+
+/* Mobile-first responsive images */
+@media (max-width: 767px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

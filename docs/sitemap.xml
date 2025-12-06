@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Homepage -->
+<url>
+  <loc>https://ncrindustrialsolution.in/</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<!-- Main Pages -->
+<url>
+  <loc>https://ncrindustrialsolution.in/about.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/contact.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/gallery.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Main Service Pages -->
+<url>
+  <loc>https://ncrindustrialsolution.in/aluminium-fabrication-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/ms-fabrication-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/ss-fabrication-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Calibration Services -->
+<url>
+  <loc>https://ncrindustrialsolution.in/calibration-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/nabl-calibration-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/mechanical-calibration-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/electrical-calibration-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/pharmaceutical-calibration-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/special-instruments-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/calibration-instrument-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Other Services -->
+<url>
+  <loc>https://ncrindustrialsolution.in/fire-safety-equipment.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/hardware-store-supplier-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/wall-paint-service-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/heavvy-electrical-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/transport-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://ncrindustrialsolution.in/pg-room-bhiwadi.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<!-- Legal Pages -->
+<url>
+  <loc>https://ncrindustrialsolution.in/disclaimer.html</loc>
+  <lastmod>2025-12-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+
+</urlset>
