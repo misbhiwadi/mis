@@ -1,5 +1,6 @@
 /* Mobile Responsive Styles - Apply only to mobile devices */
 @media (max-width: 767px) {
+
     /* Footer centering for mobile - match index.html layout */
     .footer .footer-first,
     .footer .footer-second,
@@ -7,60 +8,258 @@
         text-align: center !important;
         margin-bottom: 30px !important;
     }
-    
+
     .footer .footer-first .footerlogo {
         display: block !important;
         text-align: center !important;
         margin-bottom: 15px !important;
     }
-    
+
     .footer .footer-first .social-icons {
         justify-content: center !important;
         text-align: center !important;
     }
-    
+
     .footer .footer-second h2,
     .footer .footer-four h2 {
         text-align: center !important;
         margin-bottom: 15px !important;
     }
-    
+
     .footer .footer-second ul,
     .footer .footer-four ul {
         text-align: center !important;
         list-style: none !important;
         padding-left: 0 !important;
     }
-    
+
     .footer .footer-read-more {
         display: block !important;
         text-align: center !important;
         margin-top: 10px !important;
     }
-    
+
+    /* Sticky Header Mobile Styles */
+    /* Hide sticky header initially */
+    .sticky-header {
+        display: none !important;
+        position: fixed !important;
+        top: -100px !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 999 !important;
+        transition: top 0.3s ease !important;
+        background: white !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+        width: 100% !important;
+        height: 35px !important;
+        overflow: visible !important;
+    }
+
+    .sticky-header.show {
+        display: block !important;
+        top: 0 !important;
+    }
+
+    /* Fix sticky header hamburger button overlap */
+    .sticky-header .navbar-toggle {
+        height: 30px !important;
+        margin-top: 2px !important;
+        margin-bottom: 3px !important;
+    }
+
+    /* Fix sticky header mobile menu positioning */
+    .sticky-header .right-col {
+        float: none !important;
+        width: 100% !important;
+    }
+
+    .sticky-header .main-menu {
+        float: none !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    /* Fix sticky header container and alignment - prevent conflicts */
+    .sticky-header.show .auto-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+        min-height: 26px !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    .sticky-header.show .logo.pull-left {
+        float: none !important;
+        margin: 0 !important;
+        position: static !important;
+        margin-left: 5px !important;
+    }
+
+    .sticky-header.show .logo img {
+        max-height: 22px !important;
+    }
+
+    .sticky-header.show .right-col.pull-right {
+        float: none !important;
+        width: auto !important;
+        margin: 0 !important;
+        position: static !important;
+        margin-right: 5px !important;
+    }
+
+    .sticky-header.show .navbar-toggle {
+        margin: 0 !important;
+        position: static !important;
+        padding: 3px 5px !important;
+        min-height: 19px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .sticky-header.show .navbar-toggle .icon-bar {
+        margin: 1px 0 !important;
+    }
+
+    .sticky-header.show .main-menu {
+        float: none !important;
+        width: auto !important;
+        position: static !important;
+    }
+
+    .sticky-header.show .navbar-header {
+        float: none !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    .sticky-header .navbar-toggle {
+        margin-right: 0 !important;
+        position: relative !important;
+    }
+
+    /* Fix sticky header container positioning for dropdown */
+    .sticky-header.show .auto-container {
+        position: relative !important;
+    }
+
+    /* FORCE sticky header menu CLOSED - even when sticky header shows */
+    .sticky-header .main-menu .navbar-collapse,
+    .sticky-header .main-menu .navbar-collapse.collapse,
+    .sticky-header .navbar-collapse,
+    .sticky-header .navbar-collapse.collapse,
+    .sticky-header.show .main-menu .navbar-collapse,
+    .sticky-header.show .main-menu .navbar-collapse.collapse,
+    .sticky-header.show .navbar-collapse,
+    .sticky-header.show .navbar-collapse.collapse {
+        display: none !important;
+        background: #e1e1e1 !important;
+        border: none !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        margin-top: 10px !important;
+        border-radius: 8px !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 15px !important;
+        right: 15px !important;
+        z-index: 1000 !important;
+        width: auto !important;
+        padding: 0 !important;
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+
+    /* Show ONLY when Bootstrap adds .in class */
+    .sticky-header .main-menu .navbar-collapse.collapse.in,
+    .sticky-header .main-menu .navbar-collapse.in,
+    .sticky-header .navbar-collapse.collapse.in,
+    .sticky-header .navbar-collapse.in,
+    .sticky-header.show .main-menu .navbar-collapse.collapse.in,
+    .sticky-header.show .main-menu .navbar-collapse.in,
+    .sticky-header.show .navbar-collapse.collapse.in,
+    .sticky-header.show .navbar-collapse.in {
+        display: block !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>a {
+        color: #333 !important;
+        padding: 12px 20px !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+
+    .sticky-header .main-menu .navigation>li:hover>a,
+    .sticky-header .main-menu .navigation>li.active>a {
+        background: #e31d23 !important;
+        color: #fff !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul {
+        background: #e1e1e1 !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul>li>a {
+        color: #333 !important;
+        padding: 10px 30px !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul>li:hover>a {
+        background: #e31d23 !important;
+        color: #fff !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul>li>ul {
+        background: #1e3f73 !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul>li>ul>li>a {
+        color: #fff !important;
+        padding: 8px 40px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .sticky-header .main-menu .navigation>li>ul>li>ul>li:hover>a {
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: #fff !important;
+    }
+
+    /* Override for closed dropdowns in sticky header */
+    .sticky-header .main-menu .navigation>li.dropdown:not(.active)>ul,
+    .sticky-header .main-menu .navigation>li>ul>li.dropdown:not(.active)>ul {
+        display: none !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     /* About page mobile spacing - reduced by 70% for more content visibility */
     .about-section {
         padding-top: 0px !important;
         padding-bottom: 0px !important;
         margin-top: -37px !important;
     }
-    
+
     /* Add small spacing to prevent overlap with title */
     .about-section .right-side {
         margin-top: 25px !important;
     }
-    
+
     /* Reduce vertical spacing between page title and overview section */
     .page-title {
         padding: 8px 0 !important;
         margin-bottom: 0 !important;
     }
-    
+
     /* Reduce spacing in about section for mobile */
     .about-section.sec-padding {
         padding: 10px 0 !important;
     }
-    
+
     /* Reduce spacing between overview heading and content */
     .right-side h4 {
         color: #e31d23 !important;
@@ -69,7 +268,7 @@
         margin-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    
+
     /* Optimize overview text spacing */
     .right-side p {
         color: #000 !important;
@@ -79,177 +278,177 @@
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-    
+
     /* Reduce spacing in right-side container */
     .right-side {
         padding-top: 0 !important;
         margin-top: 0 !important;
     }
-    
+
     /* Optimize left-side (Who We Are) section spacing */
     .left-side {
         padding: 15px !important;
         margin-top: 10px !important;
     }
-    
+
     .left-side h2 {
         margin-bottom: 10px !important;
         margin-top: 0 !important;
         font-size: 18px !important;
     }
-    
+
     /* Reduce accordion spacing */
     .accordion-box .acc-btn {
         padding: 8px 15px 8px 45px !important;
         margin-bottom: 3px !important;
     }
-    
+
     .accordion-box .acc-content {
         padding: 10px !important;
         margin-top: 2px !important;
     }
-    
+
     .accordion-box .acc-content .content p {
         margin: 0 !important;
         padding: 10px !important;
         font-size: 13px !important;
         line-height: 1.4 !important;
     }
-    
+
     /* Statistics section - horizontal row layout for mobile */
     .fact-counter-section {
         padding: 15px 0 !important;
     }
-    
+
     .fact-counter-section .row {
         display: flex !important;
         flex-wrap: nowrap !important;
     }
-    
+
     .fact-counter-section .col-md-3 {
         flex: 1 !important;
         min-width: 0 !important;
         padding: 0 5px !important;
     }
-    
+
     .single-fact-counter {
         text-align: center !important;
         padding: 8px 5px !important;
     }
-    
+
     .single-fact-counter .text-box {
         padding: 0 !important;
     }
-    
+
     .single-fact-counter .icon-box {
         margin-bottom: 5px !important;
     }
-    
+
     .single-fact-counter .icon-box i {
         font-size: 20px !important;
     }
-    
+
     .single-fact-counter .number {
         font-size: 16px !important;
         margin: 3px 0 !important;
     }
-    
+
     .single-fact-counter p {
         font-size: 10px !important;
         margin: 3px 0 0 0 !important;
     }
-    
+
     /* MOBILE NAVIGATION ACTIVE STATE FIX - HIGHEST PRIORITY */
-    .main-menu .navbar-collapse .navigation > li.current > a,
-    .main-menu .navbar-collapse.collapse .navigation > li.current > a,
-    .main-menu .navbar-collapse.collapse.in .navigation > li.current > a,
-    .navbar-collapse .navigation > li.current > a,
-    .sticky-header .main-menu .navbar-collapse .navigation > li.current > a,
-    .sticky-header .navbar-collapse .navigation > li.current > a {
+    .main-menu .navbar-collapse .navigation>li.current>a,
+    .main-menu .navbar-collapse.collapse .navigation>li.current>a,
+    .main-menu .navbar-collapse.collapse.in .navigation>li.current>a,
+    .navbar-collapse .navigation>li.current>a,
+    .sticky-header .main-menu .navbar-collapse .navigation>li.current>a,
+    .sticky-header .navbar-collapse .navigation>li.current>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
     }
-    
+
     /* Mobile dropdown current state for Products/Services */
-    .main-menu .navbar-collapse .navigation > li.current.dropdown > a,
-    .main-menu .navbar-collapse.collapse .navigation > li.current.dropdown > a,
-    .main-menu .navbar-collapse.collapse.in .navigation > li.current.dropdown > a,
-    .navbar-collapse .navigation > li.current.dropdown > a,
-    .sticky-header .main-menu .navbar-collapse .navigation > li.current.dropdown > a,
-    .sticky-header .navbar-collapse .navigation > li.current.dropdown > a {
+    .main-menu .navbar-collapse .navigation>li.current.dropdown>a,
+    .main-menu .navbar-collapse.collapse .navigation>li.current.dropdown>a,
+    .main-menu .navbar-collapse.collapse.in .navigation>li.current.dropdown>a,
+    .navbar-collapse .navigation>li.current.dropdown>a,
+    .sticky-header .main-menu .navbar-collapse .navigation>li.current.dropdown>a,
+    .sticky-header .navbar-collapse .navigation>li.current.dropdown>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
     }
-    
+
     /* Override the existing mobile menu styles that prevent current highlighting */
-    .main-menu .navigation > li.current > a {
+    .main-menu .navigation>li.current>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
         transition: all 0.3s ease !important;
     }
-    
-    .main-menu .navigation > li.current.dropdown > a {
+
+    .main-menu .navigation>li.current.dropdown>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
     }
-    
+
     /* Sticky header mobile current state */
-    .sticky-header .main-menu .navigation > li.current > a {
+    .sticky-header .main-menu .navigation>li.current>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
     }
-    
-    .sticky-header .main-menu .navigation > li.current.dropdown > a {
+
+    .sticky-header .main-menu .navigation>li.current.dropdown>a {
         background: #e31d23 !important;
         background-color: #e31d23 !important;
         color: #fff !important;
     }
-    
+
     /* Local SEO Content Section - Mobile Optimization */
     .local-seo-content {
         padding: 15px 0 !important;
         background: #f8f9fa !important;
     }
-    
+
     .local-seo-content h2 {
         font-size: 18px !important;
         margin-bottom: 15px !important;
         text-align: center !important;
         line-height: 1.3 !important;
     }
-    
+
     .local-seo-content h3 {
         font-size: 16px !important;
         margin-bottom: 8px !important;
         color: #1E3F73 !important;
     }
-    
+
     .local-seo-content p {
         font-size: 13px !important;
         line-height: 1.4 !important;
         margin-bottom: 15px !important;
     }
-    
+
     .local-seo-content ul {
         font-size: 12px !important;
         line-height: 1.3 !important;
         margin-bottom: 10px !important;
     }
-    
+
     .local-seo-content ul li {
         margin-bottom: 3px !important;
     }
-    
+
     .local-seo-content .col-md-4 {
         margin-bottom: 20px !important;
         padding: 0 10px !important;
     }
-    
+
     /* Index page mobile text colors */
     .welcome_sec .text h3 {
         color: #000 !important;
@@ -260,7 +459,7 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    
+
     .welcome_sec .text p {
         color: #000 !important;
         font-size: 12px !important;
