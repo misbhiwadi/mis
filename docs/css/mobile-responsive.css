@@ -1,5 +1,41 @@
 /* Mobile Responsive Styles - Apply only to mobile devices */
 @media (max-width: 767px) {
+    /* Mobile sticky header logo size to match hamburger menu */
+    .sticky-header.show .logo img,
+    .sticky-header .logo img,
+    .sticky-header.show .logo.pull-left img {
+        max-height: 35px !important;
+        height: 35px !important;
+        width: auto !important;
+        min-height: 35px !important;
+    }
+
+    /* Reduce sticky header height and adjust positioning */
+    .sticky-header {
+        height: 40px !important;
+        min-height: 40px !important;
+    }
+
+    .sticky-header.show .auto-container {
+        min-height: 40px !important;
+        height: 40px !important;
+        padding: 5px 0 !important;
+        align-items: center !important;
+    }
+
+    /* Reset margins and use padding instead */
+    .sticky-header.show .logo.pull-left,
+    .sticky-header .logo.pull-left {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .sticky-header.show .navbar-toggle,
+    .sticky-header .navbar-toggle {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        height: 35px !important;
+    }
 
     /* Footer centering for mobile - match index.html layout */
     .footer .footer-first,
