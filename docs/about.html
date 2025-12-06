@@ -145,6 +145,7 @@
     <meta name="supported-color-schemes" content="light dark" />
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/universal-styles.css" rel="stylesheet">
+    <link href="css/mobile-responsive.css" rel="stylesheet">
     <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
     
@@ -941,6 +942,23 @@
             .main-menu .navigation > li > ul > li > ul > li:hover > a {
                 background: rgba(255,255,255,0.2) !important;
                 color: #fff !important;
+            }
+            /* Mobile text color matching index.html */
+            @media (max-width: 767px) {
+                .about-section {
+                    padding-top: 50px !important;
+                }
+                
+                .right-side p {
+                    color: #000 !important;
+                    font-size: 14px !important;
+                    line-height: 1.5 !important;
+                }
+                
+                .right-side h4 {
+                    color: #e31d23 !important;
+                    font-size: 18px !important;
+                }
             }
         }
     </style>
