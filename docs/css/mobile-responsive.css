@@ -1,5 +1,43 @@
 /* Mobile Responsive Styles - Apply only to mobile devices */
 @media (max-width: 767px) {
+    /* Footer centering for mobile - match index.html layout */
+    .footer .footer-first,
+    .footer .footer-second,
+    .footer .footer-four {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .footer .footer-first .footerlogo {
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .footer .footer-first .social-icons {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .footer .footer-second h2,
+    .footer .footer-four h2 {
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .footer .footer-second ul,
+    .footer .footer-four ul {
+        text-align: center !important;
+        list-style: none !important;
+        padding-left: 0 !important;
+    }
+    
+    .footer .footer-read-more {
+        display: block !important;
+        text-align: center !important;
+        margin-top: 10px !important;
+    }
+    
     /* About page mobile spacing - reduced by 70% for more content visibility */
     .about-section {
         padding-top: 0px !important;

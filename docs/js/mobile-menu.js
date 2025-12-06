@@ -97,3 +97,24 @@
     });
     
 })(jQuery);
+
+// Footer products toggle function - Available globally across all pages
+function toggleFooterProducts(event) {
+    event.preventDefault();
+    var hiddenItems = document.querySelectorAll('.footer-hidden-items');
+    var readMoreBtn = document.querySelector('.footer-read-more');
+
+    if (hiddenItems[0].style.display === 'none') {
+        // Show hidden items
+        hiddenItems.forEach(function (item) {
+            item.style.display = 'list-item';
+        });
+        readMoreBtn.textContent = 'Show Less';
+    } else {
+        // Hide items
+        hiddenItems.forEach(function (item) {
+            item.style.display = 'none';
+        });
+        readMoreBtn.textContent = 'Read More';
+    }
+}
