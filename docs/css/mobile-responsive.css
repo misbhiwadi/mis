@@ -7,6 +7,57 @@
         margin-top: -37px !important;
     }
     
+    /* MOBILE NAVIGATION ACTIVE STATE FIX - HIGHEST PRIORITY */
+    .main-menu .navbar-collapse .navigation > li.current > a,
+    .main-menu .navbar-collapse.collapse .navigation > li.current > a,
+    .main-menu .navbar-collapse.collapse.in .navigation > li.current > a,
+    .navbar-collapse .navigation > li.current > a,
+    .sticky-header .main-menu .navbar-collapse .navigation > li.current > a,
+    .sticky-header .navbar-collapse .navigation > li.current > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+    }
+    
+    /* Mobile dropdown current state for Products/Services */
+    .main-menu .navbar-collapse .navigation > li.current.dropdown > a,
+    .main-menu .navbar-collapse.collapse .navigation > li.current.dropdown > a,
+    .main-menu .navbar-collapse.collapse.in .navigation > li.current.dropdown > a,
+    .navbar-collapse .navigation > li.current.dropdown > a,
+    .sticky-header .main-menu .navbar-collapse .navigation > li.current.dropdown > a,
+    .sticky-header .navbar-collapse .navigation > li.current.dropdown > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+    }
+    
+    /* Override the existing mobile menu styles that prevent current highlighting */
+    .main-menu .navigation > li.current > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .main-menu .navigation > li.current.dropdown > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+    }
+    
+    /* Sticky header mobile current state */
+    .sticky-header .main-menu .navigation > li.current > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+    }
+    
+    .sticky-header .main-menu .navigation > li.current.dropdown > a {
+        background: #e31d23 !important;
+        background-color: #e31d23 !important;
+        color: #fff !important;
+    }
+    
     /* Local SEO Content Section - Mobile Optimization */
     .local-seo-content {
         padding: 15px 0 !important;
