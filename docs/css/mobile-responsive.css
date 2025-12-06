@@ -7,6 +7,120 @@
         margin-top: -37px !important;
     }
     
+    /* Add small spacing to prevent overlap with title */
+    .about-section .right-side {
+        margin-top: 25px !important;
+    }
+    
+    /* Reduce vertical spacing between page title and overview section */
+    .page-title {
+        padding: 8px 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Reduce spacing in about section for mobile */
+    .about-section.sec-padding {
+        padding: 10px 0 !important;
+    }
+    
+    /* Reduce spacing between overview heading and content */
+    .right-side h4 {
+        color: #e31d23 !important;
+        font-size: 18px !important;
+        margin-bottom: 5px !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Optimize overview text spacing */
+    .right-side p {
+        color: #000 !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Reduce spacing in right-side container */
+    .right-side {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Optimize left-side (Who We Are) section spacing */
+    .left-side {
+        padding: 15px !important;
+        margin-top: 10px !important;
+    }
+    
+    .left-side h2 {
+        margin-bottom: 10px !important;
+        margin-top: 0 !important;
+        font-size: 18px !important;
+    }
+    
+    /* Reduce accordion spacing */
+    .accordion-box .acc-btn {
+        padding: 8px 15px 8px 45px !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .accordion-box .acc-content {
+        padding: 10px !important;
+        margin-top: 2px !important;
+    }
+    
+    .accordion-box .acc-content .content p {
+        margin: 0 !important;
+        padding: 10px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Statistics section - horizontal row layout for mobile */
+    .fact-counter-section {
+        padding: 15px 0 !important;
+    }
+    
+    .fact-counter-section .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .fact-counter-section .col-md-3 {
+        flex: 1 !important;
+        min-width: 0 !important;
+        padding: 0 5px !important;
+    }
+    
+    .single-fact-counter {
+        text-align: center !important;
+        padding: 8px 5px !important;
+    }
+    
+    .single-fact-counter .text-box {
+        padding: 0 !important;
+    }
+    
+    .single-fact-counter .icon-box {
+        margin-bottom: 5px !important;
+    }
+    
+    .single-fact-counter .icon-box i {
+        font-size: 20px !important;
+    }
+    
+    .single-fact-counter .number {
+        font-size: 16px !important;
+        margin: 3px 0 !important;
+    }
+    
+    .single-fact-counter p {
+        font-size: 10px !important;
+        margin: 3px 0 0 0 !important;
+    }
+    
     /* MOBILE NAVIGATION ACTIVE STATE FIX - HIGHEST PRIORITY */
     .main-menu .navbar-collapse .navigation > li.current > a,
     .main-menu .navbar-collapse.collapse .navigation > li.current > a,
@@ -96,18 +210,6 @@
     .local-seo-content .col-md-4 {
         margin-bottom: 20px !important;
         padding: 0 10px !important;
-    }
-    
-    /* Mobile text colors - darker black for better readability */
-    .right-side p {
-        color: #000 !important;
-        font-size: 14px !important;
-        line-height: 1.5 !important;
-    }
-    
-    .right-side h4 {
-        color: #e31d23 !important;
-        font-size: 18px !important;
     }
     
     /* Index page mobile text colors */
