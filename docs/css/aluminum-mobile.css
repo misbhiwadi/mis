@@ -234,43 +234,31 @@
         color: #fff !important;
     }
 
-    /* Dropdown arrows - Chevron lines like index/about pages */
-    .main-menu .navigation li.dropdown > a::after,
-    .navigation li.dropdown > a::after,
-    li.dropdown > a::after {
-        content: '' !important;
-        position: absolute !important;
-        right: 10px !important;
-        top: 50% !important;
-        transform: translateY(-50%) rotate(45deg) !important;
-        width: 6px !important;
-        height: 6px !important;
-        border-right: 2px solid #2c7af0 !important;
-        border-bottom: 2px solid #2c7af0 !important;
-        z-index: 999 !important;
-        display: block !important;
-    }
-
-    /* Arrow when dropdown is active - rotate to point up */
-    .navigation li.dropdown.active > a::after {
-        transform: translateY(-50%) rotate(-135deg) !important;
-    }
-
-    /* Second level dropdown arrows */
-    .navigation li.dropdown ul li.dropdown>a::after,
-    .navigation li.dropdown ul li.dropdown>a:after {
-        font-family: 'FontAwesome' !important;
-        content: "\\f105" !important;
+    /* Mobile arrow icons - EXACT COPY from about.html */
+    .mobile-arrow {
+        float: right !important;
+        margin-left: 10px !important;
+        transition: transform 0.2s ease !important;
         color: #2c7af0 !important;
-        right: 10px !important;
-        top: 12px !important;
-        transform: none !important;
+        font-size: 14px !important;
     }
 
-    /* Second level active state */
-    .navigation li.dropdown ul li.dropdown.active>a::after,
-    .navigation li.dropdown ul li.dropdown.active>a:after {
-        content: "\\f107" !important;
+    .main-menu .navigation>li>a .mobile-arrow {
+        color: #2c7af0 !important;
+    }
+
+    .main-menu .navigation>li:hover>a .mobile-arrow,
+    .main-menu .navigation>li.active>a .mobile-arrow {
+        color: #fff !important;
+    }
+
+    .main-menu .navigation>li>ul>li>a .mobile-arrow {
+        color: #2c7af0 !important;
+    }
+
+    .main-menu .navigation>li>ul>li:hover>a .mobile-arrow,
+    .main-menu .navigation>li>ul>li.active>a .mobile-arrow {
+        color: #fff !important;
     }
 
     /* Ensure dropdown links have space for arrow */

@@ -4016,7 +4016,22 @@
     </script>
 
     <!-- Aluminum page mobile functionality -->
-    <script src="js/aluminum-mobile.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    
+    <!-- Sticky header functionality -->
+    <script>
+        window.addEventListener('scroll', function () {
+            var stickyHeader = document.querySelector('.sticky-header');
+            
+            if (window.pageYOffset >= 150) {
+                stickyHeader.classList.add('show');
+                document.body.classList.add('sticky-active');
+            } else {
+                stickyHeader.classList.remove('show');
+                document.body.classList.remove('sticky-active');
+            }
+        });
+    </script>
 </body>
 
 

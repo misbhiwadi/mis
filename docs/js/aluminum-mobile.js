@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 e.stopPropagation();
                 
+                // Immediately prevent any URL change
+                const currentUrl = window.location.href.split('#')[0];
+                window.history.replaceState(null, null, currentUrl);
+                
                 // Toggle active class
                 if (dropdown.classList.contains('active')) {
                     dropdown.classList.remove('active');
@@ -76,6 +80,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     dropdown.classList.add('active');
                     dropdownMenu.style.display = 'block';
                 }
+                
+                // Double-check URL cleanup
+                setTimeout(function() {
+                    const cleanUrl = window.location.href.split('#')[0];
+                    if (window.location.href !== cleanUrl) {
+                        window.history.replaceState(null, null, cleanUrl);
+                    }
+                }, 10);
+                
+                return false;
             });
         }
     });
