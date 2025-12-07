@@ -3959,14 +3959,24 @@
                 }
             });
 
-            // Add scroll functionality for Aluminium Fabrication submenu items
+            // Add scroll functionality for Aluminium Fabrication submenu items - SMART MOBILE HANDLING
             $('.dropdown ul a[href="aluminium-fabrication-bhiwadi.html"]').click(function (e) {
-                e.preventDefault();
                 var text = $(this).text().trim();
-                var targetCarousel = '#carousel-9'; // Default to general Aluminium Fabrication
+                
+                // Check if this is the main dropdown or a submenu item
+                var isMainDropdown = $(this).parent().parent().hasClass('navigation');
+                
+                // On mobile: prevent scrolling for main dropdown, allow for submenu items
+                if (window.innerWidth <= 767 && isMainDropdown) {
+                    // This is the main "Aluminium Fabrication & Glass" - don't scroll, let dropdown work
+                    return;
+                } else {
+                    // This is a submenu item OR desktop - allow scrolling
+                    e.preventDefault();
+                    var targetCarousel = '#carousel-9'; // Default to general Aluminium Fabrication
 
-                // Map submenu items to specific carousels
-                switch (text) {
+                    // Map submenu items to specific carousels
+                    switch (text) {
                     case 'Aluminium Partition':
                         targetCarousel = '#carousel-9';
                         break;
@@ -4011,6 +4021,7 @@
                 $('html, body').animate({
                     scrollTop: $(targetCarousel).offset().top - 100
                 }, 800);
+                }
             });
         });
     </script>
@@ -4055,6 +4066,13 @@
                     }
                 });
             }
+            
+            // Ensure sticky menu doesn't auto-open
+            document.querySelectorAll('.sticky-header .navbar-collapse').forEach(function(menu) {
+                menu.classList.remove('in');
+                menu.style.height = '0px';
+                menu.style.overflow = 'hidden';
+            });
         });
     </script>
 </body>
