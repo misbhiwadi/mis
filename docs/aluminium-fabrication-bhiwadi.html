@@ -3959,24 +3959,25 @@
                 }
             });
 
-            // Add scroll functionality for Aluminium Fabrication submenu items - SMART MOBILE HANDLING
-            $('.dropdown ul a[href="aluminium-fabrication-bhiwadi.html"]').click(function (e) {
+            // Add scroll functionality - ONLY prevent main dropdown, allow submenu scrolling
+            $('.dropdown ul a').click(function (e) {
+                var href = $(this).attr('href');
                 var text = $(this).text().trim();
                 
-                // Check if this is the main dropdown or a submenu item
-                var isMainDropdown = $(this).parent().parent().hasClass('navigation');
-                
-                // On mobile: prevent scrolling for main dropdown, allow for submenu items
-                if (window.innerWidth <= 767 && isMainDropdown) {
-                    // This is the main "Aluminium Fabrication & Glass" - don't scroll, let dropdown work
-                    return;
-                } else {
-                    // This is a submenu item OR desktop - allow scrolling
-                    e.preventDefault();
-                    var targetCarousel = '#carousel-9'; // Default to general Aluminium Fabrication
+                // Only handle aluminium-fabrication-bhiwadi.html links
+                if (href && href.includes('aluminium-fabrication-bhiwadi.html')) {
+                    // On mobile: prevent scrolling ONLY for main "Aluminium Fabrication & Glass" without query params
+                    if (window.innerWidth <= 767 && text === 'Aluminium Fabrication & Glass' && href === 'aluminium-fabrication-bhiwadi.html') {
+                        // This is the main dropdown - don't scroll, let dropdown work
+                        return;
+                    } else if (href.includes('?product=')) {
+                        // This is a submenu item with query param - allow scrolling
+                        e.preventDefault();
+                        var text = $(this).text().trim();
+                        var targetCarousel = '#carousel-9'; // Default
 
-                    // Map submenu items to specific carousels
-                    switch (text) {
+                        // Map submenu items to specific carousels
+                        switch (text) {
                     case 'Aluminium Partition':
                         targetCarousel = '#carousel-9';
                         break;
@@ -4021,6 +4022,7 @@
                 $('html, body').animate({
                     scrollTop: $(targetCarousel).offset().top - 100
                 }, 800);
+                    }
                 }
             });
         });
