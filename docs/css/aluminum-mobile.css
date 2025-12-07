@@ -261,6 +261,42 @@
         color: #fff !important;
     }
 
+    /* Mobile dropdown behavior - EXACT COPY from about.html */
+    @media (max-width: 767px) {
+        /* Remove hover effects on mobile */
+        .main-menu .navigation>li.dropdown:hover>ul,
+        .main-menu .navigation>li>ul>li.dropdown:hover>ul {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+
+        /* Mobile dropdown active states */
+        .main-menu .navigation>li.dropdown.active>ul,
+        .main-menu .navigation>li>ul>li.dropdown.active>ul {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: static !important;
+            box-shadow: none !important;
+            left: auto !important;
+            top: auto !important;
+        }
+
+        /* Override for closed dropdowns */
+        .main-menu .navigation>li.dropdown:not(.active)>ul,
+        .main-menu .navigation>li>ul>li.dropdown:not(.active)>ul {
+            display: none !important;
+            height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            overflow: hidden !important;
+        }
+    }
+}
+}
+
     /* Ensure dropdown links have space for arrow */
     .main-menu .navigation li.dropdown > a,
     .navigation li.dropdown > a {

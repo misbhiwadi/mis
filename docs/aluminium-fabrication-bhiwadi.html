@@ -4031,6 +4031,31 @@
                 document.body.classList.remove('sticky-active');
             }
         });
+        
+        // Additional mobile menu fixes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fix Services dropdown (no <a> tag) - minimal fix only
+            const servicesDropdown = document.querySelector('.navigation li.dropdown:not(:has(a))');
+            if (servicesDropdown && window.innerWidth <= 767) {
+                // Add mobile arrow if missing
+                if (!servicesDropdown.querySelector('.mobile-arrow')) {
+                    const arrow = document.createElement('span');
+                    arrow.className = 'mobile-arrow fa fa-angle-down';
+                    servicesDropdown.appendChild(arrow);
+                }
+                
+                // Simple click handler - let mobile-menu.js handle the rest
+                servicesDropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 767) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Just toggle active class - mobile-menu.js will handle arrows
+                        this.classList.toggle('active');
+                    }
+                });
+            }
+        });
     </script>
 </body>
 
