@@ -3561,280 +3561,18 @@
     <!-- script JS  -->
     <script src="js/script.js"></script>
 
-    <!-- Fresh Doors & Windows Carousel JavaScript -->
+    <!-- Simple Carousel JavaScript -->
     <script>
         $(document).ready(function () {
-            // Prevent Owl Carousel from interfering with Bootstrap carousel
-            $('#carousel-1').removeClass('owl-carousel');
-
-            // Destroy any existing Owl Carousel instance on this element
-            if ($('#carousel-1').data('owl.carousel')) {
-                $('#carousel-1').data('owl.carousel').destroy();
-            }
-
-            // Stop any existing carousel cycling
-            $('#carousel-1').carousel('pause');
-
-            // Initialize as pure Bootstrap carousel
-            $('#carousel-1').carousel({
+            // Initialize all carousels with basic settings
+            $('.carousel').carousel({
                 interval: false,  // No auto-rotation
                 wrap: true,       // Allow continuous loop
                 pause: false      // Don't pause on hover
             });
 
-            // Ensure it stays paused after each slide
-            $('#carousel-1').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-2 (Sliding Folding Partition)
-            $('#carousel-2').removeClass('owl-carousel');
-
-            if ($('#carousel-2').data('owl.carousel')) {
-                $('#carousel-2').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-2').carousel('pause');
-
-            $('#carousel-2').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-2').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-3 (Sound Proof Window)
-            $('#carousel-3').removeClass('owl-carousel');
-
-            if ($('#carousel-3').data('owl.carousel')) {
-                $('#carousel-3').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-3').carousel('pause');
-
-            $('#carousel-3').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-3').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-4 (Composite Panel System)
-            $('#carousel-4').removeClass('owl-carousel');
-
-            if ($('#carousel-4').data('owl.carousel')) {
-                $('#carousel-4').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-4').carousel('pause');
-
-            $('#carousel-4').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-4').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-5 (Glass Partition)
-            $('#carousel-5').removeClass('owl-carousel');
-
-            if ($('#carousel-5').data('owl.carousel')) {
-                $('#carousel-5').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-5').carousel('pause');
-
-            $('#carousel-5').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-5').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-6 (Kitchen Cabinet)
-            $('#carousel-6').removeClass('owl-carousel');
-
-            if ($('#carousel-6').data('owl.carousel')) {
-                $('#carousel-6').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-6').carousel('pause');
-
-            $('#carousel-6').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-6').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-7 (False Ceiling)
-            $('#carousel-7').removeClass('owl-carousel');
-
-            if ($('#carousel-7').data('owl.carousel')) {
-                $('#carousel-7').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-7').carousel('pause');
-
-            $('#carousel-7').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-7').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-8 (Structural Glassing)
-            $('#carousel-8').removeClass('owl-carousel');
-
-            if ($('#carousel-8').data('owl.carousel')) {
-                $('#carousel-8').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-8').carousel('pause');
-
-            $('#carousel-8').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-8').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-9 (Aluminium Fabrication)
-            $('#carousel-9').removeClass('owl-carousel');
-
-            if ($('#carousel-9').data('owl.carousel')) {
-                $('#carousel-9').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-9').carousel('pause');
-
-            $('#carousel-9').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-9').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            /* ========================================= */
-            /* CAROUSEL JAVASCRIPT FIXES - PREVENT OWL CAROUSEL CONFLICTS */
-            /* ========================================= */
-
-            // Apply same fix to carousel-facade (Facade Exterior)
-            $('#carousel-facade').removeClass('owl-carousel');
-
-            if ($('#carousel-facade').data('owl.carousel')) {
-                $('#carousel-facade').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-facade').carousel('pause');
-
-            $('#carousel-facade').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-facade').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-glass-film-new (Glass Film)
-            $('#carousel-glass-film-new').removeClass('owl-carousel');
-
-            if ($('#carousel-glass-film-new').data('owl.carousel')) {
-                $('#carousel-glass-film-new').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-glass-film-new').carousel('pause');
-
-            $('#carousel-glass-film-new').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-glass-film-new').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-curtains (Curtains Window & Door)
-            $('#carousel-curtains').removeClass('owl-carousel');
-
-            if ($('#carousel-curtains').data('owl.carousel')) {
-                $('#carousel-curtains').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-curtains').carousel('pause');
-
-            $('#carousel-curtains').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-curtains').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-mosquito-mesh (Mosquito Mesh)
-            $('#carousel-mosquito-mesh').removeClass('owl-carousel');
-
-            if ($('#carousel-mosquito-mesh').data('owl.carousel')) {
-                $('#carousel-mosquito-mesh').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-mosquito-mesh').carousel('pause');
-
-            $('#carousel-mosquito-mesh').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-mosquito-mesh').on('slid.bs.carousel', function () {
-                $(this).carousel('pause');
-            });
-
-            // Apply same fix to carousel-balcony-cover (Balcony Cover)
-            $('#carousel-balcony-cover').removeClass('owl-carousel');
-
-            if ($('#carousel-balcony-cover').data('owl.carousel')) {
-                $('#carousel-balcony-cover').data('owl.carousel').destroy();
-            }
-
-            $('#carousel-balcony-cover').carousel('pause');
-
-            $('#carousel-balcony-cover').carousel({
-                interval: false,
-                wrap: true,
-                pause: false
-            });
-
-            $('#carousel-balcony-cover').on('slid.bs.carousel', function () {
+            // Ensure carousels stay paused after each slide
+            $('.carousel').on('slid.bs.carousel', function () {
                 $(this).carousel('pause');
             });
 
@@ -3903,81 +3641,82 @@
             });
 
             // Handle URL parameters for external navigation
-            $(document).ready(function () {
-                var urlParams = new URLSearchParams(window.location.search);
-                var product = urlParams.get('product');
-                if (product) {
-                    var targetCarousel = '#carousel-9'; // Default
+            var urlParams = new URLSearchParams(window.location.search);
+            var product = urlParams.get('product');
+            if (product) {
+                var targetCarousel = '#carousel-9'; // Default
 
-                    switch (product) {
-                        case 'aluminium-partition':
-                            targetCarousel = '#carousel-9';
-                            break;
-                        case 'doors-windows':
-                            targetCarousel = '#carousel-1';
-                            break;
-                        case 'false-ceiling':
-                            targetCarousel = '#carousel-7';
-                            break;
-                        case 'glass-film':
-                            targetCarousel = '#carousel-glass-film-new';
-                            break;
-                        case 'kitchen-cabinet':
-                            targetCarousel = '#carousel-6';
-                            break;
-                        case 'facade-exterior':
-                            targetCarousel = '#carousel-facade';
-                            break;
-                        case 'curtains-window-door':
-                            targetCarousel = '#carousel-curtains';
-                            break;
-                        case 'mosquito-mesh':
-                            targetCarousel = '#carousel-mosquito-mesh';
-                            break;
-                        case 'balcony-cover':
-                            targetCarousel = '#carousel-balcony-cover';
-                            break;
-                        case 'structural-glassing':
-                            targetCarousel = '#carousel-8';
-                            break;
-                        case 'glass-partition':
-                            targetCarousel = '#carousel-5';
-                            break;
-                        case 'sliding-folding':
-                            targetCarousel = '#carousel-2';
-                            break;
-                        case 'composite-panel-system':
-                            targetCarousel = '#carousel-4';
-                            break;
-                    }
-
-                    setTimeout(function () {
-                        $('html, body').animate({
-                            scrollTop: $(targetCarousel).offset().top - 100
-                        }, 800);
-                    }, 500);
+                switch (product) {
+                    case 'aluminium-partition':
+                        targetCarousel = '#carousel-9';
+                        break;
+                    case 'doors-windows':
+                        targetCarousel = '#carousel-1';
+                        break;
+                    case 'false-ceiling':
+                        targetCarousel = '#carousel-7';
+                        break;
+                    case 'glass-film':
+                        targetCarousel = '#carousel-glass-film-new';
+                        break;
+                    case 'kitchen-cabinet':
+                        targetCarousel = '#carousel-6';
+                        break;
+                    case 'facade-exterior':
+                        targetCarousel = '#carousel-facade';
+                        break;
+                    case 'curtains-window-door':
+                        targetCarousel = '#carousel-curtains';
+                        break;
+                    case 'mosquito-mesh':
+                        targetCarousel = '#carousel-mosquito-mesh';
+                        break;
+                    case 'balcony-cover':
+                        targetCarousel = '#carousel-balcony-cover';
+                        break;
+                    case 'structural-glassing':
+                        targetCarousel = '#carousel-8';
+                        break;
+                    case 'glass-partition':
+                        targetCarousel = '#carousel-5';
+                        break;
+                    case 'sliding-folding':
+                        targetCarousel = '#carousel-2';
+                        break;
+                    case 'composite-panel-system':
+                        targetCarousel = '#carousel-4';
+                        break;
                 }
-            });
 
-            // Add scroll functionality - ONLY prevent main dropdown, allow submenu scrolling
-            $('.dropdown ul a').click(function (e) {
-                var href = $(this).attr('href');
-                var text = $(this).text().trim();
-                
-                // Only handle aluminium-fabrication-bhiwadi.html links
-                if (href && href.includes('aluminium-fabrication-bhiwadi.html')) {
-                    // On mobile: prevent scrolling ONLY for main "Aluminium Fabrication & Glass" without query params
-                    if (window.innerWidth <= 767 && text === 'Aluminium Fabrication & Glass' && href === 'aluminium-fabrication-bhiwadi.html') {
-                        // This is the main dropdown - don't scroll, let dropdown work
-                        return;
-                    } else if (href.includes('?product=')) {
-                        // This is a submenu item with query param - allow scrolling
-                        e.preventDefault();
-                        var text = $(this).text().trim();
-                        var targetCarousel = '#carousel-9'; // Default
+                setTimeout(function () {
+                    $('html, body').animate({
+                        scrollTop: $(targetCarousel).offset().top - 100
+                    }, 800);
+                }, 500);
+            }
 
-                        // Map submenu items to specific carousels
-                        switch (text) {
+            // Add scroll functionality for Aluminium Fabrication submenu items ONLY (not main dropdown)
+            $('.dropdown ul a[href="aluminium-fabrication-bhiwadi.html"]').click(function (e) {
+                var text = $(this).text().replace(/\s+/g, ' ').trim(); // Clean up whitespace and line breaks
+
+                console.log('DEBUG: Clicked on:', text);
+                console.log('DEBUG: Screen width:', window.innerWidth);
+                console.log('DEBUG: Is mobile:', window.innerWidth <= 767);
+
+                // Skip the main "Aluminium Fabrication & Glass" link - let it work as dropdown
+                if (text === 'Aluminium Fabrication & Glass') {
+                    console.log('DEBUG: Main dropdown clicked - should NOT scroll');
+                    return; // Don't prevent default, let dropdown work naturally
+                }
+
+                console.log('DEBUG: Submenu item clicked - WILL scroll to carousel');
+
+                // Only prevent default and scroll for submenu items
+                e.preventDefault();
+                var targetCarousel = '#carousel-9'; // Default to general Aluminium Fabrication
+
+                // Map submenu items to specific carousels
+                switch (text) {
                     case 'Aluminium Partition':
                         targetCarousel = '#carousel-9';
                         break;
@@ -4019,23 +3758,23 @@
                         break;
                 }
 
+                console.log('DEBUG: Scrolling to:', targetCarousel);
+
                 $('html, body').animate({
                     scrollTop: $(targetCarousel).offset().top - 100
                 }, 800);
-                    }
-                }
             });
         });
     </script>
 
-    <!-- Aluminum page mobile functionality -->
+    <!-- Mobile Menu Script -->
     <script src="js/mobile-menu.js"></script>
-    
+
     <!-- Sticky header functionality -->
     <script>
         window.addEventListener('scroll', function () {
             var stickyHeader = document.querySelector('.sticky-header');
-            
+
             if (window.pageYOffset >= 150) {
                 stickyHeader.classList.add('show');
                 document.body.classList.add('sticky-active');
@@ -4044,9 +3783,9 @@
                 document.body.classList.remove('sticky-active');
             }
         });
-        
+
         // Additional mobile menu fixes
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Fix Services dropdown (no <a> tag) - minimal fix only
             const servicesDropdown = document.querySelector('.navigation li.dropdown:not(:has(a))');
             if (servicesDropdown && window.innerWidth <= 767) {
@@ -4056,33 +3795,62 @@
                     arrow.className = 'mobile-arrow fa fa-angle-down';
                     servicesDropdown.appendChild(arrow);
                 }
-                
+
                 // Simple click handler - let mobile-menu.js handle the rest
-                servicesDropdown.addEventListener('click', function(e) {
+                servicesDropdown.addEventListener('click', function (e) {
                     if (window.innerWidth <= 767) {
                         e.preventDefault();
                         e.stopPropagation();
-                        
+
                         // Just toggle active class - mobile-menu.js will handle arrows
                         this.classList.toggle('active');
                     }
                 });
             }
-            
+
             // Ensure sticky menu doesn't auto-open
-            document.querySelectorAll('.sticky-header .navbar-collapse').forEach(function(menu) {
+            document.querySelectorAll('.sticky-header .navbar-collapse').forEach(function (menu) {
                 menu.classList.remove('in');
                 menu.style.height = '0px';
                 menu.style.overflow = 'hidden';
             });
         });
-    </script>
-    <script>
-        if (window.innerWidth <= 767) {
-            var script = document.createElement('script');
-            script.src = 'aluminum-mobile.js';
-            document.head.appendChild(script);
-        }
+
+        // Auto-close sticky menu on page scroll
+        $(document).ready(function () {
+            var lastScrollTop = 0;
+            var menuOpenTime = 0;
+            var initialScrollAfterOpen = true;
+
+            // Track when menu opens
+            $('.sticky-header .navbar-collapse').on('shown.bs.collapse', function () {
+                menuOpenTime = Date.now();
+                initialScrollAfterOpen = true;
+            });
+
+            $(window).on('scroll', function () {
+                var currentScrollTop = $(this).scrollTop();
+                var $stickyMenu = $('.sticky-header .navbar-collapse');
+
+                // Only check if sticky menu is open
+                if ($stickyMenu.hasClass('in')) {
+                    // If user is scrolling down (not up)
+                    if (currentScrollTop > lastScrollTop) {
+                        var timeSinceOpen = Date.now() - menuOpenTime;
+
+                        // Skip first scroll within 500ms of opening, then close on next scroll
+                        if (initialScrollAfterOpen && timeSinceOpen < 500) {
+                            initialScrollAfterOpen = false; // Mark first scroll as handled
+                        } else {
+                            // Close on subsequent scrolls
+                            $stickyMenu.collapse('hide');
+                        }
+                    }
+                }
+
+                lastScrollTop = currentScrollTop;
+            });
+        });
     </script>
 </body>
 
