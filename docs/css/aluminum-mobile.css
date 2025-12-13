@@ -362,32 +362,147 @@ body.sticky-active {
         color: #fff !important;
     }
 
-    /* Mobile product layout - maintain side-by-side carousel and text */
-    .content-side {
+    /* Mobile product layout - maintain side-by-side carousel and text with higher specificity */
+    .auto-container .row .content-side.col-lg-8.col-md-8.col-sm-12.col-xs-12 {
         width: 50% !important;
         float: left !important;
         padding-right: 10px !important;
     }
 
-    .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+    .auto-container .row .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
         width: 50% !important;
         float: right !important;
         padding-left: 10px !important;
     }
 
+    /* Ensure carousel takes full width of its container */
+    .content-side .services-single .carousel {
+        width: 100% !important;
+        height: 300px !important;
+        position: relative !important;
+    }
+
     /* Adjust carousel size for mobile side-by-side layout */
-    .carousel-inner {
-        height: 200px !important;
+    .content-side .carousel-inner {
+        height: 300px !important;
+        width: 100% !important;
     }
 
-    .carousel-inner .item {
-        height: 200px !important;
+    .content-side .carousel-inner .item {
+        height: 300px !important;
+        width: 100% !important;
     }
 
-    .carousel-inner .item img {
-        height: 200px !important;
+    .content-side .carousel-inner .item img {
+        height: 300px !important;
+        width: 100% !important;
         object-fit: cover !important;
     }
+
+    /* Position carousel arrows properly on images */
+    .content-side .carousel .carousel-control {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 20 !important;
+        width: 35px !important;
+        height: 35px !important;
+        background: rgba(227, 29, 35, 0.8) !important;
+        border-radius: 50% !important;
+        border: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .content-side .carousel .carousel-control .glyphicon {
+        margin: 0 !important;
+        top: 0 !important;
+        position: static !important;
+    }
+
+    .content-side .carousel .carousel-control.left {
+        left: 10px !important;
+    }
+
+    .content-side .carousel .carousel-control.right {
+        right: 10px !important;
+    }
+
+    /* Fix product spacing and separators for mobile */
+    .services-single {
+        margin-bottom: 30px !important;
+        padding-bottom: 20px !important;
+        border-bottom: 2px solid #e1e1e1 !important;
+        clear: both !important;
+    }
+
+    .services-single-two {
+        margin-bottom: 30px !important;
+        padding-bottom: 20px !important;
+        border-bottom: 2px solid #e1e1e1 !important;
+        clear: both !important;
+    }
+
+    /* Ensure proper row clearing */
+    .auto-container .row {
+        margin-bottom: 20px !important;
+        clear: both !important;
+    }
+
+    .auto-container .row::after {
+        content: "" !important;
+        display: table !important;
+        clear: both !important;
+    }
+
+    /* Push Glass Partition product down slightly with higher specificity */
+    .content-side #carousel-5.carousel.slide {
+        margin-top: 20px !important;
+        height: 300px !important;
+    }
+
+    .content-side #carousel-5.carousel.slide .carousel-inner {
+        height: 300px !important;
+        width: 100% !important;
+    }
+
+    .content-side #carousel-5.carousel.slide .carousel-inner .item {
+        height: 300px !important;
+        width: 100% !important;
+    }
+
+    .content-side #carousel-5.carousel.slide .carousel-inner .item img {
+        height: 300px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .content-side #carousel-5.carousel.slide .carousel-control {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* Push Kitchen Cabinet product down to avoid overlap */
+    .content-side #carousel-6.carousel.slide {
+        margin-top: 40px !important;
+    }
+
+    /* Shift down text parts for Glass Partition and Kitchen Cabinet */
+    .auto-container .row:has(#carousel-5) .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+        margin-top: 20px !important;
+    }
+
+    .auto-container .row:has(#carousel-6) .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+        margin-top: 40px !important;
+    }
+
+    /* Add empty space before Features heading */
+    .sidebar .sidebar-widget h3 {
+        margin-top: 15px !important;
+        margin-bottom: 3px !important;
+    }
+}
 
     /* Adjust sidebar content for mobile */
     .sidebar .sidebar-widget {
@@ -403,6 +518,30 @@ body.sticky-active {
     .sidebar .sidebar-widget ul li {
         font-size: 12px !important;
         line-height: 1.4 !important;
+    }
+
+    /* Hide decor elements on mobile */
+    .decor1 {
+        display: none !important;
+    }
+
+    /* Fix feature list icons for mobile */
+    .sidebar ul li img {
+        height: 15px !important;
+        width: 15px !important;
+        margin-right: 8px !important;
+        vertical-align: middle !important;
+    }
+
+    /* Reduce spacing between Features heading and content by 70% */
+    .sidebar .sidebar-widget h3 {
+        margin-bottom: 3px !important;
+    }
+
+    /* Reduce line spacing of feature text by 20% */
+    .sidebar .sidebar-widget ul li {
+        line-height: 1.12 !important;
+        margin-bottom: 2px !important;
     }
 }
 
