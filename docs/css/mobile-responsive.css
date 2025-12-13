@@ -291,6 +291,12 @@
         margin-bottom: 0 !important;
     }
 
+    .page-title h1 {
+        font-size: 15px !important;
+        line-height: 1.0 !important;
+        margin: 4px 0 !important;
+    }
+
     /* Reduce spacing in about section for mobile */
     .about-section.sec-padding {
         padding: 10px 0 !important;
