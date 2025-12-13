@@ -558,6 +558,12 @@ body.sticky-active {
         margin-bottom: 20px !important;
     }
 
+    /* Push Sound Proof Window section down slightly to clear red line */
+    .content-side #carousel-3.carousel.slide {
+        height: 240px !important;
+        margin-top: 8px !important;
+    }
+
     /* Reduce Aluminium Fabrication carousel height and center it */
     .content-side #carousel-9.carousel.slide {
         height: 202px !important;
@@ -578,6 +584,52 @@ body.sticky-active {
     }
 
     .content-side #carousel-9.carousel.slide .carousel-control {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* Reduce Sliding Folding Partition carousel height by 20% */
+    .content-side #carousel-2.carousel.slide {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-2.carousel.slide .carousel-inner {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-2.carousel.slide .carousel-inner .item {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-2.carousel.slide .carousel-inner .item img {
+        height: 240px !important;
+        object-fit: cover !important;
+    }
+
+    .content-side #carousel-2.carousel.slide .carousel-control {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* Reduce Sound Proof Window carousel height by 20% */
+    .content-side #carousel-3.carousel.slide {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-3.carousel.slide .carousel-inner {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-3.carousel.slide .carousel-inner .item {
+        height: 240px !important;
+    }
+
+    .content-side #carousel-3.carousel.slide .carousel-inner .item img {
+        height: 240px !important;
+        object-fit: cover !important;
+    }
+
+    .content-side #carousel-3.carousel.slide .carousel-control {
         top: 50% !important;
         transform: translateY(-50%) !important;
     }
