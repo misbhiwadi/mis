@@ -361,6 +361,49 @@ body.sticky-active {
         background: rgba(255, 255, 255, 0.2) !important;
         color: #fff !important;
     }
+
+    /* Mobile product layout - maintain side-by-side carousel and text */
+    .content-side {
+        width: 50% !important;
+        float: left !important;
+        padding-right: 10px !important;
+    }
+
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+        width: 50% !important;
+        float: right !important;
+        padding-left: 10px !important;
+    }
+
+    /* Adjust carousel size for mobile side-by-side layout */
+    .carousel-inner {
+        height: 200px !important;
+    }
+
+    .carousel-inner .item {
+        height: 200px !important;
+    }
+
+    .carousel-inner .item img {
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+
+    /* Adjust sidebar content for mobile */
+    .sidebar .sidebar-widget {
+        margin-bottom: 15px !important;
+    }
+
+    .sidebar .sidebar-widget h3 {
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sidebar .sidebar-widget p,
+    .sidebar .sidebar-widget ul li {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
 }
 
 /* Mobile JavaScript for sticky header menu close */
