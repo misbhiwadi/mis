@@ -557,6 +557,30 @@ body.sticky-active {
         padding-bottom: 20px !important;
         margin-bottom: 20px !important;
     }
+
+    /* Reduce Aluminium Fabrication carousel height and center it */
+    .content-side #carousel-9.carousel.slide {
+        height: 202px !important;
+        margin-top: 10px !important;
+    }
+
+    .content-side #carousel-9.carousel.slide .carousel-inner {
+        height: 202px !important;
+    }
+
+    .content-side #carousel-9.carousel.slide .carousel-inner .item {
+        height: 202px !important;
+    }
+
+    .content-side #carousel-9.carousel.slide .carousel-inner .item img {
+        height: 202px !important;
+        object-fit: cover !important;
+    }
+
+    .content-side #carousel-9.carousel.slide .carousel-control {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
 }
 
 /* Mobile JavaScript for sticky header menu close */
