@@ -459,21 +459,21 @@ body.sticky-active {
     /* Push Glass Partition product down slightly with higher specificity */
     .content-side #carousel-5.carousel.slide {
         margin-top: 20px !important;
-        height: 300px !important;
+        height: 240px !important;
     }
 
     .content-side #carousel-5.carousel.slide .carousel-inner {
-        height: 300px !important;
+        height: 240px !important;
         width: 100% !important;
     }
 
     .content-side #carousel-5.carousel.slide .carousel-inner .item {
-        height: 300px !important;
+        height: 240px !important;
         width: 100% !important;
     }
 
     .content-side #carousel-5.carousel.slide .carousel-inner .item img {
-        height: 300px !important;
+        height: 240px !important;
         width: 100% !important;
         object-fit: cover !important;
     }
