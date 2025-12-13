@@ -117,7 +117,7 @@ body.sticky-active {
         transform: translateY(-50%) !important;
         width: 50px !important;
         height: 35px !important;
-        background: url('images/MISLogo.jpeg') no-repeat center !important;
+        background: url('../images/MISLogo.jpeg') no-repeat center !important;
         background-size: contain !important;
     }
 
