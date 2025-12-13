@@ -633,6 +633,107 @@ body.sticky-active {
         top: 50% !important;
         transform: translateY(-50%) !important;
     }
+    /* Mobile Footer Styles - Make aluminium-fabrication-bhiwadi.html identical to about.html */
+    
+    /* Footer responsive layout - stack vertically on mobile */
+    .footer .row .col-sm-6.col-md-3 {
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 20px !important;
+        padding: 0 15px !important;
+        display: block !important;
+    }
+
+    /* Hide all nested dropdown menus completely */
+    .footer .footer-second ul li.dropdown > ul {
+        display: none !important;
+    }
+
+    /* Show only first 5 items, hide the rest like about.html */
+    .footer .footer-second ul li:nth-child(n+6) {
+        display: none !important;
+    }
+
+    /* Style main footer links to match about.html exactly */
+    .footer .footer-second ul li a {
+        color: #ccc !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        text-decoration: none !important;
+        display: block !important;
+        padding: 3px 0 !important;
+        margin-bottom: 5px !important;
+    }
+
+    .footer .footer-second ul li a:hover {
+        color: #fac012 !important;
+    }
+
+    /* Add Read More link after the list */
+    .footer .footer-second ul::after {
+        content: "Read More" !important;
+        display: block !important;
+        color: #e31d23 !important;
+        font-size: 12px !important;
+        text-decoration: underline !important;
+        margin-top: 10px !important;
+        cursor: pointer !important;
+    }
+
+    /* Fix logo size to match about.html */
+    .footer .footer-first .footerlogo img {
+        max-width: 200px !important;
+        height: auto !important;
+    }
+
+    .footer .footer-first .social-icons {
+        margin-top: 10px !important;
+    }
+
+    .footer .footer-first .social-icons li {
+        display: inline-block !important;
+        margin-right: 8px !important;
+    }
+
+    .footer .footer-first .social-icons li a {
+        width: 30px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        font-size: 14px !important;
+    }
+
+    /* Fix heading colors to white */
+    .footer h2 {
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+        color: #fff !important;
+    }
+
+    .footer iframe {
+        height: 150px !important;
+        width: 100% !important;
+    }
+
+    .footer .footer-four ul li {
+        margin-bottom: 8px !important;
+        font-size: 12px !important;
+    }
+
+    .footer .footer-four ul li i {
+        margin-right: 8px !important;
+        color: #e31d23 !important;
+        width: 15px !important;
+    }
+
+    /* Fix contact text colors to match about.html */
+    .footer .footer-four ul li span {
+        color: #fff !important;
+    }
+
+    .footer .footer-four ul li span a {
+        color: #fff !important;
+        text-decoration: none !important;
+    }
 }
 
 /* Mobile JavaScript for sticky header menu close */
