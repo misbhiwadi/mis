@@ -543,6 +543,13 @@ body.sticky-active {
         line-height: 1.12 !important;
         margin-bottom: 2px !important;
     }
+
+    /* Move red line separator below Anti corrosive text */
+    .auto-container .row:has(#carousel-5) {
+        border-bottom: 3px solid #e1e1e1 !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
 }
 
 /* Mobile JavaScript for sticky header menu close */
