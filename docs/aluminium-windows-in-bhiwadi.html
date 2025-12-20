@@ -275,14 +275,14 @@
     {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Aluminium Gates & Doors Product Catalogue",
+        "name": "Aluminium Doors & Gates  Product Catalogue",
         "description": "Complete range of aluminium gates and doors with various options and configurations",
         "numberOfItems": 16,
         "itemListElement": [
             {
                 "@type": "Product",
                 "position": 1,
-                "name": "Aluminium Gates & Doors with ACP Sheet",
+                "name": "Aluminium Doors & Gates  with ACP Sheet",
                 "description": "Weather resistant gates and doors with ACP cladding",
                 "category": "Aluminium Gates Doors",
                 "brand": "MicroTech Industrial"
@@ -290,7 +290,7 @@
             {
                 "@type": "Product",
                 "position": 2,
-                "name": "Aluminium Gates & Doors with MS/SS Mesh",
+                "name": "Aluminium Doors & Gates  with MS/SS Mesh",
                 "description": "Security gates and doors with mesh infill",
                 "category": "Aluminium Gates Doors",
                 "brand": "MicroTech Industrial"
@@ -298,7 +298,7 @@
             {
                 "@type": "Product",
                 "position": 3,
-                "name": "Aluminium Sliding Gates & Doors",
+                "name": "Aluminium Sliding Doors & Gates ",
                 "description": "Space-saving sliding gates and doors",
                 "category": "Aluminium Gates Doors",
                 "brand": "MicroTech Industrial"
@@ -1317,7 +1317,8 @@
                                                     <li><a href="aluminium-gate-aluminium-door-in-bhiwadi.html">Aluminium Door & Gate</a>
                                                     </li>
                                                     <li><a href="aluminium-windows-in-bhiwadi.html">Aluminium Windows</a>
-                                                    </li>                                                    <li><a href="false-ceiling-in-bhiwadi.html">False Ceiling</a>
+                                                    </li>
+                                                    <li><a href="false-ceiling-in-bhiwadi.html">False Ceiling</a>
                                                     </li>
                                                     <li><a href="aluminium-fabrication-bhiwadi.html">Glass Film</a></li>
                                                     <li><a href="aluminium-fabrication-bhiwadi.html">Kitchen Cabinet</a>
@@ -1445,8 +1446,9 @@
                                                     <li><a href="aluminium-gate-aluminium-door-in-bhiwadi.html">Aluminium Door & Gate</a>
                                                     </li>
                                                     <li><a href="false-ceiling-in-bhiwadi.html">False Ceiling</a>
+                                                    </li>
                                                     <li><a href="aluminium-windows-in-bhiwadi.html">Aluminium Windows</a>
-                                                    </li>                                                    </li>
+                                                    </li>
                                                     <li><a href="aluminium-fabrication-bhiwadi.html">Glass Film</a></li>
                                                     <li><a href="aluminium-fabrication-bhiwadi.html">Kitchen Cabinet</a>
                                                     </li>
@@ -1951,7 +1953,7 @@
                     <div class="content">
 
                         <h3 style="text-align:center;margin-bottom:10px;margin-top:10px;"><a
-                                href="false-ceiling-in-bhiwadi.html">False Ceiling</a></h3>
+                                href="false-ceiling-in-bhiwadi.html" onclick="console.log('False Ceiling link clicked from windows page'); return true;">False Ceiling</a></h3>
 
                         <div class="text"></div>
 
@@ -2875,8 +2877,8 @@
                 }, 800);
             });
 
-            // Add scroll functionality for False Ceiling view more buttons
-            $('a[href="false-ceiling-in-bhiwadi.html"]').click(function (e) {
+            // Add scroll functionality for False Ceiling view more buttons (but not menu links)
+            $('a[href="false-ceiling-in-bhiwadi.html"]:not(.navbar-nav a, .main-menu a)').click(function (e) {
                 e.preventDefault();
                 $('html, body').animate({
                     scrollTop: $('#carousel-7').offset().top - 100
