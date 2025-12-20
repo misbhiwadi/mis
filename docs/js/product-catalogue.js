@@ -60,6 +60,18 @@ $(document).ready(function() {
     // Function to map product names to folder names
     function getProductFolder(productName) {
         var folderMap = {
+            // Windows products
+            'aluminium-sliding-window--2-track---3-track-': 'Aluminium-Windows/sliding-window-2-3-track',
+            'aluminium-sliding-window-with-glass': 'Aluminium-Windows/sliding-window-glass',
+            'aluminium-sliding-window-with-mesh': 'Aluminium-Windows/sliding-window-mesh',
+            'aluminium-sliding-window-with-grill': 'Aluminium-Windows/sliding-window-grill',
+            'aluminium-sliding-window-with-acp-panel': 'Aluminium-Windows/sliding-window-acp-panel',
+            'aluminium-casement-window--side-hung-': 'Aluminium-Windows/casement-window-side-hung',
+            'aluminium-fixed-window': 'Aluminium-Windows/fixed-window',
+            'aluminium-openable-window': 'Aluminium-Windows/openable-window',
+            'aluminium-fixed-window-with-glass': 'Aluminium-Windows/fixed-window-glass',
+            'aluminium-customizable-window': 'Aluminium-Windows/customizable-window',
+            // Gates & Doors products
             'aluminium-gates---doors-with-acp-sheet': 'acp-sheet-gates-doors',
             'aluminium-gates---doors-with-ms---ss-mesh': 'ms-ss-mesh-gates-doors',
             'aluminium-sliding-gates---doors': 'sliding-gates-doors',
