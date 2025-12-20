@@ -78,6 +78,22 @@ $(document).ready(function() {
     function getProductFolder(productName) {
         console.log('Getting folder for:', productName);
         var folderMap = {
+            // False Ceiling products
+            'gypsum-false-ceiling': 'false_ceiling/gypsum-false-ceiling',
+            'pop--plaster-of-paris--false-ceiling': 'false_ceiling/pop',
+            'pvc-false-ceiling': 'false_ceiling/pvc',
+            'false-ceiling-with-led-lights': 'false_ceiling/light',
+            'metal-false-ceiling': 'false_ceiling/metal',
+            'grid---modular-false-ceiling': 'false_ceiling/grid',
+            'acoustic-false-ceiling': 'false_ceiling/Acoustic',
+            'wooden-false-ceiling': 'false_ceiling/Wooden',
+            'glass-false-ceiling': 'false_ceiling/glass',
+            'cement-board-false-ceiling': 'false_ceiling/cement',
+            'outdoor---exterior-false-ceiling': 'false_ceiling/outdoor',
+            'floating---island-false-ceiling': 'false_ceiling/floating',
+            'coffered-false-ceiling': 'false_ceiling/coffered',
+            'baffle-false-ceiling': 'false_ceiling/baffle',
+            'fabric---stretch-false-ceiling': 'false_ceiling/fabric',
             // Windows products
             'aluminium-sliding-window--2-track---3-track-': 'Aluminium-Windows/sliding-window-2-3-track',
             'aluminium-sliding-window-with-glass': 'Aluminium-Windows/sliding-window-glass',
@@ -89,22 +105,22 @@ $(document).ready(function() {
             'aluminium-openable-window': 'Aluminium-Windows/openable-window',
             'aluminium-fixed-window-with-glass': 'Aluminium-Windows/fixed-window-glass',
             'aluminium-customizable-window': 'Aluminium-Windows/customizable-window',
-            // Gates & Doors products
-            'aluminium-gates---doors-with-acp-sheet': 'acp-sheet-gates-doors',
-            'aluminium-gates---doors-with-ms---ss-mesh': 'ms-ss-mesh-gates-doors',
-            'aluminium-sliding-gates---doors': 'sliding-gates-doors',
-            'aluminium-folding-gates---doors': 'folding-gates-doors',
-            'aluminium-motorized-gates---doors': 'motorized-gates-doors',
-            'aluminium-single-gates---doors': 'single-gates-doors',
-            'aluminium-double-gates---doors': 'double-gates-doors',
-            'aluminium-hinged-gates---doors--top-hung---side-hung-': 'hinged-gates-doors',
-            'aluminium-gates---doors-with-glass': 'glass-gates-doors',
-            'aluminium-gates---doors-with-grill': 'grill-gates-doors',
-            'aluminium-gates---doors-with-mesh': 'mesh-gates-doors',
-            'aluminium-top-hung-sliding-gates---doors': 'top-hung-sliding-gates-doors',
-            'aluminium-multi-fold-gates---doors': 'multi-fold-gates-doors',
-            'aluminium-bathroom-gates---doors': 'bathroom-gates-doors',
-            'aluminium-bathroom-gates---doors-with-frosted-glass': 'bathroom-frosted-glass-gates-doors',
+            // Doors & Gates products - Fixed to match actual HTML titles
+            'aluminium-doors---gates--with-acp-sheet': 'acp-sheet-gates-doors',
+            'aluminium-doors---gates--with-ms---ss-mesh': 'ms-ss-mesh-gates-doors',
+            'aluminium-sliding-doors---gates-': 'sliding-gates-doors',
+            'aluminium-folding-doors---gates-': 'folding-gates-doors',
+            'aluminium-motorized-doors---gates-': 'motorized-gates-doors',
+            'aluminium-single-doors---gates-': 'single-gates-doors',
+            'aluminium-double-doors---gates-': 'double-gates-doors',
+            'aluminium-hinged-doors---gates---top-hung---side-hung-': 'hinged-gates-doors',
+            'aluminium-doors---gates--with-glass': 'glass-gates-doors',
+            'aluminium-doors---gates--with-grill': 'grill-gates-doors',
+            'aluminium-doors---gates--with-mesh': 'mesh-gates-doors',
+            'aluminium-top-hung-sliding-doors---gates-': 'top-hung-sliding-gates-doors',
+            'aluminium-multi-fold-doors---gates-': 'multi-fold-gates-doors',
+            'aluminium-bathroom-doors---gates-': 'bathroom-gates-doors',
+            'aluminium-bathroom-doors---gates--with-frosted-glass': 'bathroom-frosted-glass-gates-doors',
             'aluminium-shop-front-system': 'shop-front-system'
         };
         
