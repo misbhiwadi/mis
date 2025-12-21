@@ -24,11 +24,8 @@
     <!-- Modern SEO & Performance Meta Tags -->
     <link rel="canonical" href="https://ncrindustrialsolution.in/contact.html" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
 
     <!-- Enhanced Responsive Support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="MobileOptimized" content="320" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="palm" content="yes" />
@@ -347,7 +344,7 @@
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/mobile-responsive.css" rel="stylesheet">
     <link href="css/seo-optimization.css" rel="stylesheet">
@@ -359,6 +356,50 @@
         /* Hide Aluminium Fabrication & Glass div by default */
         div[name="Aluminium Fabrication & Glass"] {
             display: none;
+        }
+
+        /* Mobile input fix - minimal approach */
+        @media (max-width: 767px) {
+            .contact-section .form-control {
+                font-size: 16px !important;
+                -webkit-appearance: none;
+            }
+            
+            .contact-section input[type="text"],
+            .contact-section input[type="email"] {
+                background-color: white;
+                border: 1px solid #ddd;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            /* Fix overlapping select-box issue */
+            .select-box {
+                position: relative !important;
+                z-index: 1 !important;
+            }
+            
+            /* Ensure text inputs are above select boxes */
+            #contact_name, #contact_email, #contact_phone {
+                position: relative !important;
+                z-index: 10 !important;
+                pointer-events: auto !important;
+                -webkit-user-select: text !important;
+                user-select: text !important;
+            }
+            
+            /* Ensure form groups don't overlap */
+            .form-group {
+                position: relative !important;
+                margin-bottom: 15px !important;
+                clear: both !important;
+            }
+            
+            /* Fix form layout on mobile */
+            .col-md-6.col-sm-6.col-xs-12 {
+                margin-bottom: 10px !important;
+            }
         }
 
         /* Show the div when needed */
@@ -1519,7 +1560,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    alert('Thank you for your inquiry! We will contact you soon at +91-9636-055399 or email sales@ncrindustrialsolution.in');
+                    // Form submission handled elsewhere
                 });
             }
         });
@@ -1588,6 +1629,27 @@
     <!-- Mobile Script -->
     <script src="js/mobile-menu.js"></script>
     <script src="js/aluminum-mobile.js"></script>
+    
+    <!-- Mobile input fix -->
+    <script>
+        // Simple fix for mobile input focus
+        if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var inputs = document.querySelectorAll('#contact_name, #contact_email, #contact_phone');
+                inputs.forEach(function(input) {
+                    input.addEventListener('touchstart', function(e) {
+                        e.stopPropagation();
+                        this.focus();
+                    });
+                    
+                    input.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        this.focus();
+                    });
+                });
+            });
+        }
+    </script>
 </body>
 
 
