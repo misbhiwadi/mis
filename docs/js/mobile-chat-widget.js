@@ -35,13 +35,13 @@
                 left: 0;
                 right: 0;
                 z-index: 9999;
-                background: linear-gradient(135deg, #e31d23, #1E3F73);
+                background: linear-gradient(135deg, rgba(227, 29, 35, 0.9), rgba(30, 63, 115, 0.9));
                 box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
                 display: flex;
                 justify-content: space-between;
-                padding: 10px 15px;
+                padding: 8px 15px;
                 gap: 10px;
-                height: 60px;
+                height: 50px;
             `;
             
             widget.innerHTML = `
@@ -90,7 +90,7 @@
             `;
             
             document.body.appendChild(widget);
-            document.body.style.paddingBottom = '70px';
+            document.body.style.paddingBottom = '60px';
             console.log('Chat widget added to page');
             
             // Add WhatsApp function to global scope
