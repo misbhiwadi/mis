@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Management Admin</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body{font-family:Arial,sans-serif;margin:0;padding:20px;background:#f5f5f5}
+        .login-container{max-width:400px;margin:100px auto;background:white;padding:30px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:none}
+        .admin-panel{display:block}
+        .header{background:#333;color:white;padding:15px;margin:-20px -20px 20px -20px;border-radius:8px 8px 0 0;display:flex;justify-content:space-between;align-items:center}
+        .header h2{margin:0}
+        .header .btn{margin:0}
+        .btn{padding:8px 16px;margin:5px;border:none;border-radius:4px;cursor:pointer}
+        .btn-primary{background:#007bff;color:white}
+        .btn-success{background:#28a745;color:white}
+        .btn-danger{background:#dc3545;color:white}
+        .btn-warning{background:#ffc107;color:black}
+        input,select{width:100%;padding:8px;margin:5px 0;border:1px solid #ddd;border-radius:4px;box-sizing:border-box}
+        input[type="date"]{position:relative}
+        table{width:100%;border-collapse:collapse;margin:20px 0;background:white}
+        th,td{border:1px solid #ddd;padding:8px;text-align:left}
+        th{background:#f8f9fa}
+        .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5)}
+        .modal-content{background:white;margin:5% auto;padding:20px;width:80%;max-width:600px;border-radius:8px;max-height:80vh;overflow-y:auto}
+        .close{float:right;font-size:28px;font-weight:bold;cursor:pointer}
+        .error{color:red;margin:10px 0}
+        @media (max-width:768px){
+            .modal-content{width:95%;margin:2% auto;padding:15px}
+            input,select{font-size:16px}
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginForm">
+        <h2>Admin Login</h2>
+        <input type="text" id="username" placeholder="Username"/>
+        <input type="password" id="password" placeholder="Password"/>
+        <button class="btn btn-primary" onclick="login()">Login</button>
+        <div id="loginError" class="error"></div>
+    </div>
+
+    <div class="admin-panel" id="adminPanel">
+        <div class="header">
+            <h2>Site Management System</h2>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+        
+        <div>
+            <button class="btn btn-success" onclick="showAddModal()">Add New Site</button>
+            <button class="btn btn-primary" onclick="downloadExcel()">Download Excel</button>
+        </div>
+
+        <table id="siteTable">
+            <thead id="tableHeader"></thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <div id="siteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Add Site</h3>
+            <form id="siteForm">
+                <div id="errorMessage" class="error" style="display:none"></div>
+                <div id="formFields"></div>
+                <button type="button" class="btn btn-primary" onclick="saveSite()">Save</button>
+                <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="$('#historyModal').hide()">&times;</span>
+            <div id="historyContent"></div>
+        </div>
+    </div>
+
+    <script>
+        let siteData=[];
+        let currentEditIndex=-1;
+        let headers=[];
+        
+        const auth=()=>atob('TUlTQWRtaW46TUlTQERLQDkxMzY=').split(':');
+        
+        function login(){
+            const u=$('#username').val();
+            const p=$('#password').val();
+            const c=auth();
+            
+            if(u===c[0]&&p===c[1]){
+                $('#loginForm').hide();
+                $('#adminPanel').show();
+                loadData();
+            }else{
+                $('#loginError').text('Invalid credentials');
+            }
+        }
+        
+        function logout(){
+            $('#adminPanel').hide();
+            $('#loginForm').show();
+            $('#username,#password').val('');
+            $('#loginError').text('');
+        }
+        
+        function loadData(){
+            headers=['SiteID','Site Name','Location','Status','Work Detail','Approval Received','Approval Proof Link','Work Start Date','Work End Date','Expected Delivery Date','CreatedOn','ModifiedOn','Work Remark'];
+            
+            const saved=localStorage.getItem('siteData');
+            if(saved){
+                const data=JSON.parse(saved);
+                siteData=data.sites||[];
+            }else{
+                siteData=[];
+            }
+            renderTable();
+        }
+        
+        function renderTable(){
+            if(headers.length===0){
+                $('#tableHeader').html('<tr><th>No data available</th></tr>');
+                $('#tableBody').html('');
+                return;
+            }
+            
+            const sortedData=[...siteData].sort((a,b)=>{
+                if(a.Status==='In Progress'&&b.Status!=='In Progress')return -1;
+                if(a.Status!=='In Progress'&&b.Status==='In Progress')return 1;
+                return new Date(a.CreatedOn||0)-new Date(b.CreatedOn||0);
+            });
+            
+            const headerHtml='<tr>'+headers.map(h=>`<th>${h}</th>`).join('')+'<th>Actions</th></tr>';
+            $('#tableHeader').html(headerHtml);
+            
+            const bodyHtml=sortedData.map((site,i)=>{
+                const originalIndex=siteData.indexOf(site);
+                const rowData=headers.map(h=>`<td>${site[h]||''}</td>`).join('');
+                let rowStyle='';
+                if(site.Status==='Completed')rowStyle='style="background-color:#d4edda"';
+                else if(site.Status==='Cancelled')rowStyle='style="background-color:#f8d7da"';
+                else if(site.Status==='On Hold')rowStyle='style="background-color:#fff3cd"';
+                return `<tr ${rowStyle}>${rowData}<td>
+                    <button class="btn btn-warning" onclick="editSite(${originalIndex})">Edit</button>
+                    <button class="btn btn-primary" onclick="showHistory('${site.SiteID}')">History</button>
+                </td></tr>`;
+            }).join('');
+            
+            $('#tableBody').html(bodyHtml);
+        }
+        
+        function showAddModal(){
+            headers=['SiteID','Site Name','Location','Status','Work Detail','Approval Received','Approval Proof Link','Work Start Date','Work End Date','Expected Delivery Date','CreatedOn','ModifiedOn','Work Remark'];
+            currentEditIndex=-1;
+            $('#modalTitle').text('Add New Site');
+            generateForm();
+            $('#siteModal').show();
+        }
+        
+        function editSite(i){
+            currentEditIndex=i;
+            $('#modalTitle').text('Edit Site');
+            generateForm(siteData[i]);
+            $('#siteModal').show();
+        }
+        
+        function generateForm(data={}){
+            const fields=headers.filter(h=>h!=='CreatedOn'&&h!=='ModifiedOn'&&h!=='SiteID').map(h=>{
+                if(h==='Site Name'||h==='Location'){
+                    return `<label>${h}*:</label><input type="text" id="field_${h.replace(/\s+/g,'_')}" value="${data[h]||''}" required/>`;
+                }
+                if(h==='Status'){
+                    const options=['Not Started','In Progress','Completed','On Hold','Cancelled'];
+                    const opts=options.map(o=>`<option value="${o}" ${data[h]===o?'selected':''}>${o}</option>`).join('');
+                    return `<label>${h}*:</label><select id="field_${h.replace(/\s+/g,'_')}" required onchange="toggleDateFields()">${opts}</select>`;
+                }
+                if(h==='Approval Received'){
+                    const options=['Yes','No'];
+                    const opts=options.map(o=>`<option value="${o}" ${data[h]===o?'selected':''}>${o}</option>`).join('');
+                    return `<label>${h}*:</label><select id="field_${h.replace(/\s+/g,'_')}" required>${opts}</select>`;
+                }
+                if(h==='Approval Proof Link'){
+                    return `<label>${h}*:</label><input type="text" id="field_${h.replace(/\s+/g,'_')}" value="${data[h]||''}" required/>`;
+                }
+                if(h==='Work Detail'){
+                    return `<label>${h}*:</label><input type="text" id="field_${h.replace(/\s+/g,'_')}" value="${data[h]||''}" required/>`;
+                }
+                if(h==='Work Start Date'||h==='Work End Date'||h==='Expected Delivery Date'){
+                    return `<label id="label_${h.replace(/\s+/g,'_')}">${h}:</label><input type="date" id="field_${h.replace(/\s+/g,'_')}" value="${data[h]||''}" onclick="this.showPicker()" onfocus="this.showPicker()" onchange="validateDates()"/>`;
+                }
+                return `<label>${h}:</label><input type="text" id="field_${h.replace(/\s+/g,'_')}" value="${data[h]||''}"/>`;
+            }).join('');
+            $('#formFields').html(fields);
+            setTimeout(toggleDateFields,100);
+        }
+        
+        function toggleDateFields(){
+            const status=$('#field_Status').val();
+            const isOptional=status==='Not Started'||status==='Cancelled';
+            
+            ['Work_Start_Date','Work_End_Date','Expected_Delivery_Date'].forEach(field=>{
+                const fieldEl=$(`#field_${field}`);
+                const labelEl=$(`#label_${field}`);
+                
+                if(isOptional){
+                    fieldEl.prop('required',false).css('border','1px solid #ddd');
+                    labelEl.html(labelEl.text().replace('*:',':'));
+                }else{
+                    fieldEl.prop('required',true);
+                    labelEl.html(labelEl.text().replace(':','*:'));
+                }
+            });
+        }
+        
+        function validateDates(){
+            const startDate=$('#field_Work_Start_Date').val();
+            const endDate=$('#field_Work_End_Date').val();
+            const expectedDate=$('#field_Expected_Delivery_Date').val();
+            
+            if(startDate&&endDate&&endDate<startDate){
+                $('#field_Work_End_Date').val('').css('border','2px solid red');
+                $('#errorMessage').html('Work End Date must be after Work Start Date').show();
+                return false;
+            }
+            
+            if(startDate&&expectedDate&&expectedDate<startDate){
+                $('#field_Expected_Delivery_Date').val('').css('border','2px solid red');
+                $('#errorMessage').html('Expected Delivery Date must be after Work Start Date').show();
+                return false;
+            }
+            
+            $('#field_Work_End_Date,#field_Expected_Delivery_Date').css('border','1px solid #ddd');
+            $('#errorMessage').hide();
+            return true;
+        }
+        
+        function saveSite(){
+            const newSite={};
+            let valid=true;
+            let missingFields=[];
+            
+            headers.forEach(h=>{
+                const fieldId=h.replace(/\s+/g,'_');
+                const field=$(`#field_${fieldId}`);
+                const value=field.val();
+                newSite[h]=value;
+                
+                if(field.prop('required')&&!value){
+                    field.css('border','2px solid red');
+                    missingFields.push(h);
+                    valid=false;
+                }else{
+                    field.css('border','1px solid #ddd');
+                }
+            });
+            
+            if(!valid){
+                $('#errorMessage').html(`Please fill the following mandatory fields:<br>• ${missingFields.join('<br>• ')}`).show();
+                return;
+            }
+            
+            if(!validateDates()){
+                return;
+            }
+            
+            $('#errorMessage').hide();
+            
+            const now=new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'});
+            if(currentEditIndex===-1){
+                const siteId='SITE_'+Date.now();
+                newSite['SiteID']=siteId;
+                newSite['CreatedOn']=now;
+                newSite['ModifiedOn']=now;
+                siteData.push(newSite);
+                logHistory(siteId,'Created',null,newSite);
+            }else{
+                const oldSite={...siteData[currentEditIndex]};
+                newSite['SiteID']=oldSite.SiteID;
+                newSite['ModifiedOn']=now;
+                if(oldSite['CreatedOn']){
+                    newSite['CreatedOn']=oldSite['CreatedOn'];
+                }else{
+                    newSite['CreatedOn']=now;
+                }
+                siteData[currentEditIndex]=newSite;
+                logHistory(newSite.SiteID,'Updated',oldSite,newSite);
+            }
+            
+            renderTable();
+            closeModal();
+            saveLocal();
+        }
+        
+        function closeModal(){
+            $('#siteModal').hide();
+            $('#errorMessage').hide();
+        }
+        
+        function saveLocal(){
+            // Save to localStorage as backup
+            localStorage.setItem('siteData',JSON.stringify({headers,sites:siteData}));
+            
+            // Also save to GitHub (requires GitHub token)
+            saveToGitHub();
+        }
+        
+        function saveToGitHub(){
+            // This would require GitHub Personal Access Token
+            // For now, just download the file for manual upload
+            const ws=XLSX.utils.json_to_sheet(siteData);
+            const wb=XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb,ws,'Site Status');
+            
+            // Auto-download updated Excel file
+            XLSX.writeFile(wb,'Site Status.xlsx');
+            
+            // Show instruction
+            alert('File downloaded! Please upload the new Site Status.xlsx to your docs folder to sync changes.');
+        }
+        
+        function downloadExcel(){
+            const ws=XLSX.utils.json_to_sheet(siteData);
+            const wb=XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb,ws,'Site Status');
+            XLSX.writeFile(wb,'Site Status.xlsx');
+        }
+        
+        function logHistory(siteId,action,oldData,newData){
+            const history=JSON.parse(localStorage.getItem('siteHistory')||'[]');
+            const timestamp=new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'});
+            
+            const changes=[];
+            if(action==='Updated'&&oldData){
+                headers.forEach(h=>{
+                    if(oldData[h]!==newData[h]){
+                        changes.push({field:h,from:oldData[h],to:newData[h]});
+                    }
+                });
+            }
+            
+            history.push({
+                siteId,
+                action,
+                timestamp,
+                changes:action==='Created'?'Site created':changes,
+                user:'Admin'
+            });
+            
+            localStorage.setItem('siteHistory',JSON.stringify(history));
+        }
+        
+        function showHistory(siteId){
+            const history=JSON.parse(localStorage.getItem('siteHistory')||'[]');
+            const siteHistory=history.filter(h=>h.siteId===siteId);
+            
+            let historyHtml='<h3>Site History: '+siteId+'</h3>';
+            siteHistory.forEach(h=>{
+                historyHtml+=`<div style="border:1px solid #ddd;margin:10px 0;padding:10px">
+                    <strong>${h.action}</strong> on ${h.timestamp} by ${h.user}<br>`;
+                
+                if(Array.isArray(h.changes)){
+                    h.changes.forEach(c=>{
+                        historyHtml+=`• ${c.field}: "${c.from}" → "${c.to}"<br>`;
+                    });
+                }else{
+                    historyHtml+=h.changes;
+                }
+                historyHtml+='</div>';
+            });
+            
+            $('#historyContent').html(historyHtml);
+            $('#historyModal').show();
+        }
+        
+        $(document).ready(()=>loadData());
+        
+        $(window).click(e=>{
+            if(e.target.id==='siteModal')closeModal();
+            if(e.target.id==='historyModal')$('#historyModal').hide();
+        });
+    </script>
+</body>
+</html>
